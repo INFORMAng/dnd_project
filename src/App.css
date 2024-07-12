@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('../fonts/Avalon.ttf')
+}
+
+body {
+  background-image: url(../img/background.jpg);
+  font-family: 'Avalon';
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App {
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 75%;
+  background: rgba(1, 1, 1, 0.6);
+  height: 100vh;
+  padding: 2rem;
+  padding-top: 0;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+.nav__links {
+  
+}
+
+.navbar__links {
+  font-size: 30px;
+  margin: 0 30px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar__links:active {
+  color: rgb(149, 238, 170);
+}
+
+
+.about {
+  padding: 4rem;
+  text-align: center;
+}
+
+/* ----------------Карточки персонажей------------------- */
+
+.main__characters {
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__character {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 20px;
+  height: 100%;
+  width: 300px;
+  background: rgba(46, 97, 53, 0.8);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+
+/* ----------------------Персонаж------------------------- */
+
+.character__page {
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.character__img {
+  background: rgba(76, 129, 89, 0.9);
+  height: 100%;
+  width: 34%;
+}
+
+.character__body {
+  padding: 1rem;
+  height: 100%;
+  width: 64%;
+}
+
+.character__about {
+  display: flex;
+  justify-content: center;
+}
+
+.about__item {
+  margin: 10px 50px;
+  font-size: 2em;
+}
+
+.character__main {
+  display: flex;
+  padding: 1rem;
+  height: 60%;
+}
+
+.character__stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.character__stats__item {
+  border-radius: 20px;
+  border: 3px solid white;
+  padding: 0.3rem;
+  height: 4.8rem;
+  width: 5rem;
+}
+
+.stats__name {
+  font-weight: 500;
+}
+
+.stats__count {
+  font-size: 40px;
+}
+
+.character__items {
+  width: 100%;
+  height: 80%;
+  padding: 0 1rem;
+}
+
+.character__personality {
+  
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.character__skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.skill__item {
+  border-radius: 10px;
+  border: 3px solid white;
+  text-align: left;
+  font-size: 20px;
+  padding: 3px;
+}
+
+.character__description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.description__item  {
+  border-radius: 10px;
+  border: 3px solid white;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.description__item div {
+  font-size: 20px;
+}
+
+.description__item h1{
+  margin-bottom: 5px;
+}
+
+.character__inventory {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.inventory__item {
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid white;
+  width: 8rem;
+  height: 6rem;
+  line-height: 4.5rem;
+}
+
+.character__history {
+  padding: 1rem;
+  font-size: 20px;
+}
