@@ -24,7 +24,7 @@ const Characters = () => {
       <div className="card__character">
         <div>
           <h2>Имя персонажа</h2>
-          <div>Класс: Ассасин</div>
+          <div>Клfasfsafsfsfsfs</div>
           <div>Здоровье: 5</div>
         </div>
         <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
