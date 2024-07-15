@@ -1,0 +1,82 @@
+{
+  "characters":
+    [{ "id": "1",
+      "name": "Геральт из Ривии",
+      "info": {"health": "5", "class": "мечник", "race": "огр"},
+      "stats": {"strong": "+1", "agility": "-2", "stamina": "+1", "IQ": "-1", "luck": "+3"},
+      "skills": [
+        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+      ],
+      "personality": [
+        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
+        {"title": "Привязанности", "description": "Дочка"},
+        {"title": "Слабость", "description": "Грех"},
+        {"title": "Цели", "description": "Мир и спокойствие"}
+      ],
+      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
+    },
+      {
+        "id": "2",
+      "name": "Йенифэр",
+      "info": {"health": "3", "class": "маг", "race": "человек"},
+      "stats": {"strong": "+1", "agility": "+2", "stamina": "+1", "IQ": "+5", "luck": "+3"},
+      "skills": [
+        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+      ],
+      "personality": [
+        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
+        {"title": "Привязанности", "description": "Дочка"},
+        {"title": "Слабость", "description": "Грех"},
+        {"title": "Цели", "description": "Мир и спокойствие"}
+      ],
+      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
+      },
+      {
+        "id": "3",
+      "name": "Гном Гномыч",
+      "info": {"health": "5", "class": "дурак", "race": "гном"},
+      "stats": {"strong": "+1", "agility": "-2", "stamina": "+1", "IQ": "-1", "luck": "+3"},
+      "skills": [
+        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+      ],
+      "personality": [
+        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
+        {"title": "Привязанности", "description": "Дочка"},
+        {"title": "Слабость", "description": "Грех"},
+        {"title": "Цели", "description": "Мир и спокойствие"}
+      ],
+      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
+      },
+      {
+        "id": "4",
+      "name": "Геральт из Ривии",
+      "info": {"health": "5", "class": "мечник", "race": "огр"},
+      "stats": {"strong": "+1", "agility": "-2", "stamina": "+1", "IQ": "-1", "luck": "+3"},
+      "skills": [
+        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
+        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+      ],
+      "personality": [
+        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
+        {"title": "Привязанности", "description": "Дочка"},
+        {"title": "Слабость", "description": "Грех"},
+        {"title": "Цели", "description": "Мир и спокойствие"}
+      ],
+      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
+      }]
+}
