@@ -8,10 +8,3 @@ export const routes = [
   {path: '/character/1', component: Character, exact: true},
 ]
 
-
-const characters = {
-  chatacter: {
-    hp: "",
-    
-  }
-}

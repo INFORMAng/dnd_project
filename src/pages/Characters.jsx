@@ -1,42 +1,22 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
+import { CharContext } from '../context/CharContext'
 
 const Characters = () => {
   const router = useNavigate()
-  return (
+  const {Chars, setChars} = useContext(CharContext)
+  return ( 
     <div className='main__characters'>
-      <div className="card__character">
+      {Chars.map(char => ( 
+      <div key={char.id} className="card__character">
         <div>
-          <h2>Имя персонажа</h2>
-          <div>Класс: Ассасин</div>
-          <div>Здоровье: 5</div>
+          <h2>{char.name}</h2>
+          <div>Класс: {char.info.class}</div>
+          <div>Здоровье: {char.info.health}</div>
         </div>
         <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
       </div>
-      <div className="card__character">
-        <div>
-          <h2>Имя персонажа</h2>
-          <div>Класс: Ассасин</div>
-          <div>Здоровье: 5</div>
-        </div>
-        <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
-      </div>
-      <div className="card__character">
-        <div>
-          <h2>Имя персонажа</h2>
-          <div>Класс: Ассасин</div>
-          <div>Здоровье: 5</div>
-        </div>
-        <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
-      </div>
-      <div className="card__character">
-        <div>
-          <h2>Имя персонажа</h2>
-          <div>Класс: Ассасин</div>
-          <div>Здоровье: 5</div>
-        </div>
-        <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
-      </div>
+      ))} 
     </div>
   )
 }

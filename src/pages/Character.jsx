@@ -33,12 +33,8 @@ const Character = () => {
               <div className="stats__count">-1</div>
             </div>
             <div className="character__stats__item">
-              <div className="stats__name">Мудрость</div>
+              <div className="stats__name">Удача</div>
               <div className="stats__count">+3</div>
-            </div>
-            <div className="character__stats__item">
-              <div className="stats__name">Харизма</div>
-              <div className="stats__count">+0</div>
             </div>
           </div>
 
