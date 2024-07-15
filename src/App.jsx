@@ -8,11 +8,10 @@ import { useFetching } from './hooks/useFetching'
 import CharacterService from './API/CharacterService'
 
 function App() {
-  const [Chars, setChars] = useState({})
+  const [chars, setChars] = useState({})
   const [getChars, isLoading, error] = useFetching(async () => {
     const response = await CharacterService.getCharacter("characters")
     setChars(response.data)
-    console.log(Chars)
   })
   useEffect(() => {
     getChars()
@@ -20,7 +19,7 @@ function App() {
   return (
     <div className='App'>
       <CharContext.Provider value={{
-        Chars,
+        chars,
         setChars,
       }}>
         <BrowserRouter>
