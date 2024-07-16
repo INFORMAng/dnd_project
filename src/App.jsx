@@ -8,6 +8,7 @@ import { useFetching } from './hooks/useFetching'
 import CharacterService from './API/CharacterService'
 
 function App() {
+  const arr = 5;
   const [chars, setChars] = useState({})
   const [getChars, isLoading, error] = useFetching(async () => {
     const response = await CharacterService.getCharacter("characters")
