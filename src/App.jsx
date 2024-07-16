@@ -3,31 +3,32 @@ import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './components/AppRouter'
 import Navbar from './components/UI/navbar/Navbar'
-import { CharContext } from './context/CharContext'
 import { useFetching } from './hooks/useFetching'
 import CharacterService from './API/CharacterService'
+import { useDispatch } from 'react-redux'
+import { setCharactersData } from './store/slices/charactersSlice'
+import { getArrayToLocalStorage } from './helpers/string'
 
 function App() {
-  const arr = 5;
-  const [chars, setChars] = useState({})
+  const dispatch = useDispatch()
+  const isLocalCharsData = getArrayToLocalStorage('localCharsData')
+
   const [getChars, isLoading, error] = useFetching(async () => {
     const response = await CharacterService.getCharacter("characters")
-    setChars(response.data)
+    dispatch(setCharactersData(isLocalCharsData ? isLocalCharsData : response.data))
   })
+  
+
   useEffect(() => {
-    getChars()
+      getChars()
   }, []) 
+
   return (
     <div className='App'>
-      <CharContext.Provider value={{
-        chars,
-        setChars,
-      }}>
         <BrowserRouter>
           <Navbar/>
           <AppRouter/>
         </BrowserRouter>
-      </CharContext.Provider>
     </div>
   )
 }

@@ -1,15 +1,19 @@
-import React, { useContext} from 'react'
-import { CharContext } from '../context/CharContext'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { getCharsData } from '../store/selectors/charactersSelectors'
 import Character from './Character'
 
+
 const Characters = () => {
-  
-  const {chars, setChars} = useContext(CharContext)
+  const chars = useSelector(getCharsData)
+
   return ( 
     <div className='main__characters'>
-      {chars.map(char => ( 
+
+      {chars?.map(char => ( 
         <Character key={char.id} char={char}/>
       ))} 
+      
     </div>
   )
 }

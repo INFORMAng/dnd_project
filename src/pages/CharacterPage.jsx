@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CharacterPage = () => {
+
   return (
     <div className='character__page'>
 

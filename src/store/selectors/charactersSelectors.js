@@ -1,0 +1,1 @@
+export const getCharsData = (state) => state.chars.chars
