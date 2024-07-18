@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { saveArrayToLocalStorage } from '../../helpers/string'
+import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
 
 const initialState = {
   chars: [],
