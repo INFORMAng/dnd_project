@@ -10,22 +10,22 @@ const Characters = () => {
   const dispatch = useDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
 
-  const {data, isLoading, error} = useCharacters(null, {
+  const {data: chars, isLoading, error} = useCharacters(null, {
     pollInterval: 1000 // запросы каждые 1 сек
   })
 
   useEffect(() => {
-    if (!isLocalCharsData && data) {
-      dispatch(setCharactersData(data))
+    if (!isLocalCharsData && chars) {
+      dispatch(setCharactersData(chars))
     } else {
       dispatch(setCharactersData(isLocalCharsData))
     }
-  }, [dispatch, data])
+  }, [dispatch, chars])
 
   return ( 
     <div className='main__characters'>
 
-      {data?.map(char => ( 
+      {chars?.map(char => ( 
         <CharacterCard key={char.id} char={char}/>
       ))} 
       
