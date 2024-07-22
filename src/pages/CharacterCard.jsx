@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Character = ({char}) => {
+const CharacterCard = ({char}) => {
   const router = useNavigate()
   return (
     <div className="card__character">
@@ -10,9 +10,9 @@ const Character = ({char}) => {
           <div>Класс: {char.info.class}</div>
           <div>Здоровье: {char.info.health}</div>
         </div>
-        <button onClick={() => router('/character/1')}>ОПИСАНИЕ</button>
+        <button onClick={() => router(`/characters/${char.id}`)}>ОПИСАНИЕ</button>
       </div>
   )
 }
 
-export default Character
+export default CharacterCard
