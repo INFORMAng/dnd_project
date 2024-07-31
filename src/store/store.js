@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import charactersReducer from './slices/charactersSlice'
+import charactersReducer from './slices/charactersSlice.ts'
 import {rtkApi} from "../API/rtkApi.js";
 
-export const store = configureStore({
+export const setupStore = configureStore({
   reducer: {
     chars: charactersReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
@@ -11,5 +11,4 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(rtkApi.middleware)
 })
-
 

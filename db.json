@@ -1,12 +1,12 @@
 {
   "characters":
-    [{ "id": "1",
+    [{ "id": 1,
       "name": "Геральт из Ривии",
-      "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
-      ],
+      "info": {
+        "health": {"name": "Здоровье", "count": "5"},
+        "class": {"name": "Класс", "count": "мечник"},
+        "race": {"name": "Раса", "count": "человек"}
+      },
       "stats": [
         {"name": "Сила", "count": "+1"},
         {"name": "Ловкость", "count": "-2"},
@@ -30,13 +30,13 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
     },
       {
-        "id": "2",
+        "id": 2,
       "name": "Йенифэр",
-      "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
-      ],
+      "info": {
+        "health": {"name": "Здоровье", "count": "5"},
+        "class": {"name": "Класс", "count": "мечник"},
+        "race": {"name": "Раса", "count": "человек"}
+      },
       "stats": [
         {"name": "Сила", "count": "+1"},
         {"name": "Ловкость", "count": "-2"},
@@ -61,13 +61,13 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
       },
       {
-        "id": "3",
+        "id": 3,
       "name": "Гном Гномыч",
-      "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
-      ],
+      "info": {
+        "health": {"name": "Здоровье", "count": "5"},
+        "class": {"name": "Класс", "count": "мечник"},
+        "race": {"name": "Раса", "count": "человек"}
+      },
       "stats": [
         {"name": "Сила", "count": "+1"},
         {"name": "Ловкость", "count": "-2"},
@@ -91,13 +91,13 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
       },
       {
-        "id": "4",
+        "id": 4,
       "name": "Геральт из Ривии",
-      "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
-      ],
+      "info": {
+        "health": {"name": "Здоровье", "count": "5"},
+        "class": {"name": "Класс", "count": "мечник"},
+        "race": {"name": "Раса", "count": "человек"}
+      },
       "stats": [
         {"name": "Сила", "count": "+1"},
         {"name": "Ловкость", "count": "-2"},
