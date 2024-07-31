@@ -9,7 +9,6 @@ const AppRouter = () => {
         <Route 
           path={route.path} 
           Component={route.component} 
-          exact={route.exact} 
           key={route.path}
         />
       )}

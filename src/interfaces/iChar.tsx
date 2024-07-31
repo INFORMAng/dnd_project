@@ -1,7 +1,7 @@
 export interface IChar {
   id: number;
   name: string;
-  info: charInfo;
+  info: itemCount[];
   stats: itemCount[];
   skills: itemDescription[];
   personality: itemDescription[];
@@ -16,10 +16,5 @@ export interface IResponse {
 }
 
 interface itemCount {name: string; count: string}
-interface itemDescription {name: string; description: string}
+interface itemDescription {title: string; description: string}
 
-interface charInfo {
-  health: itemCount,
-  class: itemCount,
-  race: itemCount,
-}

@@ -4,7 +4,7 @@ import CharacterCard from './CharacterCard'
 import { useCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
-import { IResponse } from '../interfaces/char'
+import { IResponse } from '../interfaces/iChar'
 
 
 const Characters = () => {

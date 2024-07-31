@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
-import { IChar } from '../../interfaces/char.js'
+import { IChar } from '../../interfaces/iChar.js'
 
 interface charState {
   chars: IChar[];
