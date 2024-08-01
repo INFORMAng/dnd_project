@@ -1,17 +1,16 @@
-import React, { FC, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
 import CharacterCard from './CharacterCard'
 import { useCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
-import { IResponse } from '../interfaces/iChar'
+import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
 
 
 const Characters = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
 
-  const {data: chars} = useCharacters<IResponse>(null, {
+  const {data: chars} = useCharacters(null, {
     pollingInterval: 1000 // запросы каждые 1 сек
   })
 
@@ -25,8 +24,7 @@ const Characters = () => {
 
   return ( 
     <div className='main__characters'>
-
-      {chars?.map(char => ( 
+      {chars?.map(char => (
         <CharacterCard key={char.id} char={char}/>
       ))} 
       

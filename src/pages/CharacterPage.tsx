@@ -2,11 +2,12 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getChar } from '../store/selectors/charactersSelectors'
-import { IChar } from '../interfaces/iChar'
+import {StateSchema} from "../store/config/stateSchema";
 
 const CharacterPage = () => {
-  const params = useParams()
-  const {name, info, stats, skills, personality, inventory, history}:IChar = useSelector((state) => getChar(state, params?.id))
+  const {id} = useParams()
+  const {name, info, stats, skills, personality, inventory, history} = useSelector((state: StateSchema) => getChar(state, id))
+
   return (
     <div className='character__page'>
 
@@ -56,7 +57,7 @@ const CharacterPage = () => {
             </div>
 
             <div className="character__inventory">
-              
+
               {inventory.map(item => (
                 <div key={item} className="inventory__item">{item}</div>
               ))}
@@ -64,7 +65,7 @@ const CharacterPage = () => {
             </div>
           </div>
           </div>
-        
+
         <div className="character__history">{history}</div>
 
       </div>
