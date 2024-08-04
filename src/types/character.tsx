@@ -1,4 +1,4 @@
-export interface IChar {
+export interface ICharacter {
   id: number;
   name: string;
   info: itemCount[];
@@ -10,11 +10,11 @@ export interface IChar {
 }
 
 export interface ICharacterScheme {
-  chars: IChar[]
+  chars: ICharacter[]
 }
 
 export interface IResponse {
-  data: IChar[];
+  data: ICharacter[];
   isLoading?: boolean;
   error?: string;
 }

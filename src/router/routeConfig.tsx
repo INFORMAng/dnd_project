@@ -1,7 +1,8 @@
+import React from "react";
 import About from "../pages/About";
 import CharacterPage from "../pages/CharacterPage";
 import Characters from "../pages/Characters";
-import {Navigate, RouteProps, Routes, RoutesProps} from "react-router-dom";
+import {Navigate, RouteProps} from "react-router-dom";
 
 export enum AppRoutes {
   ABOUT = 'about',

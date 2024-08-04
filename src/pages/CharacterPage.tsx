@@ -6,21 +6,25 @@ import {StateSchema} from "../store/config/stateSchema";
 
 const CharacterPage = () => {
   const {id} = useParams()
-  const {name, info, stats, skills, personality, inventory, history} = useSelector((state: StateSchema) => getChar(state, id))
+  const character = useSelector((state: StateSchema) => getChar(state, id))
+  
+  if(!character) {
+    return <div>character is not found...</div>
+  }
+
+  const {name, info, stats, skills, personality, inventory, history} = character
 
   return (
     <div className='character__page'>
-
       <div className="character__img"/>
-
       <div className="character__body">
-        <h1 style={{textAlign: 'center'}}>{name}</h1>
-
+        <h1 className='character__name'>{name}</h1>
         <div className="character__about">
+          
           {info.map(param => <div key={param.name} className='about__item'>{param.name}: {param.count}</div>)}
+
         </div>
         <div className="character__main">
-
           <div className="character__stats">
 
             {stats.map(stat => (
@@ -31,10 +35,8 @@ const CharacterPage = () => {
             ))}
 
           </div>
-
           <div className="character__items">
             <div className="character__personality">
-
               <div className="character__skills">
                 <h1>Способности</h1>
 
@@ -43,7 +45,6 @@ const CharacterPage = () => {
                 ))}
 
               </div>
-
               <div className="character__description">
 
                 {personality.map(item => (
@@ -55,7 +56,6 @@ const CharacterPage = () => {
 
               </div>
             </div>
-
             <div className="character__inventory">
 
               {inventory.map(item => (
@@ -65,11 +65,8 @@ const CharacterPage = () => {
             </div>
           </div>
           </div>
-
         <div className="character__history">{history}</div>
-
       </div>
-      
     </div>
   )
 }

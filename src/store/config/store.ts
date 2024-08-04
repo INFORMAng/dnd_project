@@ -8,12 +8,12 @@ const rootReducers: ReducersMapObject<StateSchema> = {
     [rtkApi.reducerPath]: rtkApi.reducer,
 }
 
-export const setupStore = configureStore({
+export const store = configureStore({
   reducer: rootReducers,
   middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(rtkApi.middleware)
 })
 
-export type AppDispatch = typeof setupStore.dispatch
+export type AppDispatch = typeof store.dispatch
 
-export default setupStore
+export default store

@@ -1,25 +1,29 @@
 import React, { memo, FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { IChar } from '../interfaces/iChar'
-
+import { ICharacter } from '../types/character'
 
 interface CharacterCardProps {
-  char: IChar;
+  key: number;
+  char: ICharacter;
 }
 
-const CharacterCard: FC<CharacterCardProps> = ({char}) => {
-  if (!char || !char.info || !char.info[1] || !char.info[0]) {
+const CharacterCard = (props: CharacterCardProps) => {
+  const router = useNavigate()
+  const {name, info: charInfo, id} = props.char
+  const [charClass, charHealth] = [charInfo[1].count, charInfo[0].count]
+  
+  if (!props.char) {
     return <div>Invalid character data</div>
   }
-  const router = useNavigate()
+
   return (
     <div className="card__character">
         <div>
-          <h2>{char.name}</h2>
-          <div>Класс: {char.info[1].count}</div>
-          <div>Здоровье: {char.info[0].count}</div>
+          <h2>{name}</h2>
+          <div>Класс: {charClass}</div>
+          <div>Здоровье: {charHealth}</div>
         </div>
-        <button onClick={() => router(`/characters/${char.id}`)}>ОПИСАНИЕ</button>
+        <button onClick={() => router(`/characters/${id}`)}>ОПИСАНИЕ</button>
       </div>
   )
 }

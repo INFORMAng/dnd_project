@@ -24,6 +24,7 @@ const Characters = () => {
 
   return ( 
     <div className='main__characters'>
+      
       {chars?.map(char => (
         <CharacterCard key={char.id} char={char}/>
       ))} 

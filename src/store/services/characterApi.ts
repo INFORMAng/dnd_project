@@ -1,9 +1,9 @@
 import {rtkApi} from "../../API/rtkApi.js";
-import {IChar} from "../../interfaces/iChar";
+import {ICharacter} from "../../types/character.js";
 
 const charactersApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
-        getCharacters: build.query<IChar[], null>({
+        getCharacters: build.query<ICharacter[], null>({
             query: () => ({
                 url: '/characters',
             }),

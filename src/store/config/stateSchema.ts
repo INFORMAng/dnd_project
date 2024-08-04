@@ -1,5 +1,5 @@
 import {rtkApi} from "../../API/rtkApi";
-import {ICharacterScheme} from "../../interfaces/iChar";
+import {ICharacterScheme} from "../../types/character";
 
 export interface StateSchema {
     characters: ICharacterScheme,
