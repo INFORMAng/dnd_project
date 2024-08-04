@@ -9,6 +9,10 @@ export interface IChar {
   history: string;
 }
 
+export interface ICharacterScheme {
+  chars: IChar[]
+}
+
 export interface IResponse {
   data: IChar[];
   isLoading?: boolean;
