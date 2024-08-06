@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 const About = () => {
   return (
     <div className='about'>
-      <h1 style={{marginBottom: '30px'}}>УВАЖАЕМЫЕ ИГРОКИ, Добро пожаловать в <br/> Dungeons & Dragons!</h1>
+      <h1 className='about__item'>УВАЖАЕМЫЕ ИГРОКИ, Добро пожаловать в <br/> Dungeons & Dragons!</h1>
       <h3>Уважаемые игроки!
 
 Добро пожаловать в мир Dungeons and Dragons. Сегодня вы погрузитесь в тайны и интриги Кровавого королевства. Здесь, в мрачных лесах и древних замках, хранятся секреты, которые многие стремились раскрыть, но немногим это удалось.
@@ -15,7 +14,5 @@ const About = () => {
     </div>
   )
 }
-
-
 
 export default About

@@ -1,7 +1,7 @@
 {
   "characters":
-    [{ "id": "1",
-      "name": "Геральт из Ривии",
+    [{ "id": 1,
+      "name": "Софьян",
       "info": [
         {"name": "Здоровье", "count": "5"},
         {"name": "Класс", "count": "мечник"},
@@ -9,10 +9,11 @@
       ],
       "stats": [
         {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "-2"},
-        {"name": "Выносл.", "count": "+1"},
-        {"name": "Интелект", "count": "-1"},
-        {"name": "Удача", "count": "+3"}
+        {"name": "Ловкость", "count": "+4"},
+        {"name": "Выносл.", "count": "+2"},
+        {"name": "Интелект", "count": "+3"},
+        {"name": "Мудрость", "count": "+3"},
+        {"name": "Харизма", "count": "-1"}
       ],
       "skills": [
         {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
@@ -30,7 +31,7 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
     },
       {
-        "id": "2",
+        "id": 2,
       "name": "Йенифэр",
       "info": [
         {"name": "Здоровье", "count": "5"},
@@ -39,10 +40,11 @@
       ],
       "stats": [
         {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "-2"},
-        {"name": "Выносл.", "count": "+1"},
-        {"name": "Интелект", "count": "-1"},
-        {"name": "Удача", "count": "+3"}
+        {"name": "Ловкость", "count": "+4"},
+        {"name": "Выносл.", "count": "+2"},
+        {"name": "Интелект", "count": "+3"},
+        {"name": "Мудрость", "count": "+3"},
+        {"name": "Харизма", "count": "-1"}
       ],
       "skills": [
         {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
@@ -61,8 +63,8 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
       },
       {
-        "id": "3",
-      "name": "Гном Гномыч",
+        "id": 3,
+      "name": "Софийнис",
       "info": [
         {"name": "Здоровье", "count": "5"},
         {"name": "Класс", "count": "мечник"},
@@ -70,10 +72,11 @@
       ],
       "stats": [
         {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "-2"},
-        {"name": "Выносл.", "count": "+1"},
-        {"name": "Интелект", "count": "-1"},
-        {"name": "Удача", "count": "+3"}
+        {"name": "Ловкость", "count": "+4"},
+        {"name": "Выносл.", "count": "+2"},
+        {"name": "Интелект", "count": "+3"},
+        {"name": "Мудрость", "count": "+3"},
+        {"name": "Харизма", "count": "-1"}
       ],
       "skills": [
         {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
@@ -91,7 +94,7 @@
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
       },
       {
-        "id": "4",
+        "id": 4,
       "name": "Геральт из Ривии",
       "info": [
         {"name": "Здоровье", "count": "5"},
@@ -100,10 +103,11 @@
       ],
       "stats": [
         {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "-2"},
-        {"name": "Выносл.", "count": "+1"},
-        {"name": "Интелект", "count": "-1"},
-        {"name": "Удача", "count": "+3"}
+        {"name": "Ловкость", "count": "+4"},
+        {"name": "Выносл.", "count": "+2"},
+        {"name": "Интелект", "count": "+3"},
+        {"name": "Мудрость", "count": "+3"},
+        {"name": "Харизма", "count": "-1"}
       ],
       "skills": [
         {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
