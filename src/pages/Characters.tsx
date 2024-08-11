@@ -5,30 +5,27 @@ import { setCharactersData } from '../store/slices/charactersSlice'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
 import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
 
-
 const Characters = () => {
   const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
 
-  const {data: chars} = useCharacters(null, {
-    pollingInterval: 1000 // запросы каждые 1 сек
+  const {data: characters} = useCharacters(null, {
+    pollingInterval: 1000
   })
 
   useEffect(() => {
-    if (!isLocalCharsData && chars) {
-      dispatch(setCharactersData(chars))
+    if (!isLocalCharsData && characters) {
+      dispatch(setCharactersData(characters))
     } else {
       dispatch(setCharactersData(isLocalCharsData))
     }
-  }, [dispatch, chars])
+  }, [dispatch, characters])
 
   return ( 
     <div className='main__characters'>
-      
-      {chars?.map(char => (
-        <CharacterCard key={char.id} char={char}/>
+      {characters?.map(character => (
+        <CharacterCard key={character.id} character={character}/>
       ))} 
-      
     </div>
   )
 }

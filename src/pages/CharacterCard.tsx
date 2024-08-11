@@ -4,15 +4,15 @@ import { ICharacter } from '../types/character'
 
 interface CharacterCardProps {
   key: number;
-  char: ICharacter;
+  character: ICharacter;
 }
 
 const CharacterCard = (props: CharacterCardProps) => {
   const router = useNavigate()
-  const {name, info: charInfo, id} = props.char
-  const [charClass, charHealth] = [charInfo[1].count, charInfo[0].count]
+  const {name, info: charInfo, id} = props.character
+  const [charClass, charHealth] = [charInfo[2].count, charInfo[0].count]
   
-  if (!props.char) {
+  if (!props.character) {
     return <div>Invalid character data</div>
   }
 

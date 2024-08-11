@@ -10,7 +10,7 @@ export interface ICharacter {
 }
 
 export interface ICharacterScheme {
-  chars: ICharacter[]
+  characters: ICharacter[]
 }
 
 export interface IResponse {

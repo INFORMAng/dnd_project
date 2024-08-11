@@ -3,18 +3,18 @@ import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
 import {ICharacterScheme} from '../../types/character.js'
 
 const initialState: ICharacterScheme = {
-  chars: [],
+  characters: [],
 }
 
 export const charactersSlice = createSlice({
-  name: 'chars',
+  name: 'characters',
   initialState,
   reducers: {
     setCharactersData: (state, action) => {
-      const charsData = action.payload
+      const charactersData = action.payload
       
-      saveArrayToLocalStorage('localCharsData', charsData)
-      state.chars = charsData;
+      saveArrayToLocalStorage('localCharsData', charactersData)
+      state.characters = charactersData;
     },
   },
 })
