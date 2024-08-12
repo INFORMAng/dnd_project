@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { ICharacter } from '../../types/character';
 import { useNavigate, useParams } from 'react-router-dom';
 import MyCounter from './MyCounter/MyCounter';
+import { useUpdateCharacters } from '../../store/services/characterApi';
 
 interface MapCharacterProps {
   key: number;
@@ -22,10 +23,10 @@ const MapCharacter = (props: MapCharacterProps) => {
           <div className="map__character__stats">
             <div className="map__character__health__block">
               <div className="map__character__health">{charHealth}</div>
-              <MyCounter/>
+              <MyCounter character={props.character} type={'Здоровье'}/>
             </div>
             <div className="map__character__health__block">
-              <MyCounter/>
+              <MyCounter character={props.character} type={'Броня'}/>
               <div className="map__character__armor">{charArmor}</div>
             </div> 
           </div>

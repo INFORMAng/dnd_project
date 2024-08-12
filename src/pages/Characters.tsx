@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import CharacterCard from './CharacterCard'
-import { useCharacters } from '../store/services/characterApi'
+import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
 import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
@@ -8,10 +8,7 @@ import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
 const Characters = () => {
   const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
-
-  const {data: characters} = useCharacters(null, {
-    pollingInterval: 1000
-  })
+  const {data: characters} = useGetCharacters(null)
 
   useEffect(() => {
     if (!isLocalCharsData && characters) {

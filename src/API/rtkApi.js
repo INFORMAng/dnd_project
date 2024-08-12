@@ -3,6 +3,7 @@ import {BASE_URL} from "../helpers/constants/api.js";
 
 export const rtkApi = createApi({
     reducerPath: 'api',
+    tagTypes: ['Characters'],
     baseQuery: fetchBaseQuery({
         baseUrl: BASE_URL,
     }),

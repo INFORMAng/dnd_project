@@ -19,6 +19,6 @@ export interface IResponse {
   error?: string;
 }
 
-interface itemCount {name: string; count: string}
+export interface itemCount {name: string; count: string}
 interface itemDescription {title: string; description: string}
 

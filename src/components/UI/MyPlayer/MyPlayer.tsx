@@ -10,7 +10,7 @@ interface MyPlayerProps {
 const MyPlayer = (props: MyPlayerProps) => {
   const {name} = props
   return (
-    <Rnd enableResizing={false}>
+    <Rnd bounds="parent" enableResizing={false}>
       <div className={cl.myPlayer}>{name}</div>
     </Rnd>
   )

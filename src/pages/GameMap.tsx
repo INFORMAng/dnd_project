@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
-import { useCharacters } from '../store/services/characterApi'
+import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import MapCharacter from '../components/UI/MapCharacter'
-import { Rnd } from 'react-rnd'
 import MyPlayer from '../components/UI/MyPlayer/MyPlayer'
 
 const GameMap = () => {
   const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
-
-  const {data: characters} = useCharacters(null, {
-    pollingInterval: 1000 // запросы каждые 1 сек
-  })
+  const {data: characters} = useGetCharacters(null)
 
   useEffect(() => {
     if (!isLocalCharsData && characters) {

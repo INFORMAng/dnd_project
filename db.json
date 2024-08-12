@@ -1,131 +1,376 @@
 {
-  "characters":
-    [{ "id": 1,
+  "characters": [
+    {
+      "id": "1",
       "name": "Софьян",
       "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Броня", "count": "9"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
+        {
+          "name": "Здоровье",
+          "count": "4"
+        },
+        {
+          "name": "Броня",
+          "count": "10"
+        },
+        {
+          "name": "Класс",
+          "count": "мечник"
+        },
+        {
+          "name": "Раса",
+          "count": "человек"
+        }
       ],
       "stats": [
-        {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "+4"},
-        {"name": "Выносл.", "count": "+2"},
-        {"name": "Интелект", "count": "+3"},
-        {"name": "Мудрость", "count": "+3"},
-        {"name": "Харизма", "count": "-1"}
+        {
+          "name": "Сила",
+          "count": "+1"
+        },
+        {
+          "name": "Ловкость",
+          "count": "+4"
+        },
+        {
+          "name": "Выносл.",
+          "count": "+2"
+        },
+        {
+          "name": "Интелект",
+          "count": "+3"
+        },
+        {
+          "name": "Мудрость",
+          "count": "+3"
+        },
+        {
+          "name": "Харизма",
+          "count": "-1"
+        }
       ],
       "skills": [
-        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+        {
+          "title": "Какое-то заклинание",
+          "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание2",
+          "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание3",
+          "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание4",
+          "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        }
       ],
       "personality": [
-        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
-        {"title": "Привязанности", "description": "Дочка"},
-        {"title": "Слабость", "description": "Грех"},
-        {"title": "Цели", "description": "Мир и спокойствие"}
+        {
+          "title": "Черты характеры",
+          "description": "Спокойный, сдержанный, альтруист"
+        },
+        {
+          "title": "Привязанности",
+          "description": "Дочка"
+        },
+        {
+          "title": "Слабость",
+          "description": "Грех"
+        },
+        {
+          "title": "Цели",
+          "description": "Мир и спокойствие"
+        }
       ],
-      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
+      "inventory": [
+        "туалетка",
+        "фаллос",
+        "дилдо",
+        "машина",
+        "базука"
+      ],
       "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
     },
-      {
-        "id": 2,
+    {
+      "id": "2",
       "name": "Йенифэр",
       "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Броня", "count": "9"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
+        {
+          "name": "Здоровье",
+          "count": "3"
+        },
+        {
+          "name": "Броня",
+          "count": "14"
+        },
+        {
+          "name": "Класс",
+          "count": "мечник"
+        },
+        {
+          "name": "Раса",
+          "count": "человек"
+        }
       ],
       "stats": [
-        {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "+4"},
-        {"name": "Выносл.", "count": "+2"},
-        {"name": "Интелект", "count": "+3"},
-        {"name": "Мудрость", "count": "+3"},
-        {"name": "Харизма", "count": "-1"}
+        {
+          "name": "Сила",
+          "count": "+1"
+        },
+        {
+          "name": "Ловкость",
+          "count": "+4"
+        },
+        {
+          "name": "Выносл.",
+          "count": "+2"
+        },
+        {
+          "name": "Интелект",
+          "count": "+3"
+        },
+        {
+          "name": "Мудрость",
+          "count": "+3"
+        },
+        {
+          "name": "Харизма",
+          "count": "-1"
+        }
       ],
       "skills": [
-        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание5", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+        {
+          "title": "Какое-то заклинание",
+          "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание2",
+          "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание3",
+          "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание4",
+          "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание5",
+          "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        }
       ],
       "personality": [
-        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
-        {"title": "Привязанности", "description": "Дочка"},
-        {"title": "Слабость", "description": "Грех"},
-        {"title": "Цели", "description": "Мир и спокойствие"}
+        {
+          "title": "Черты характеры",
+          "description": "Спокойный, сдержанный, альтруист"
+        },
+        {
+          "title": "Привязанности",
+          "description": "Дочка"
+        },
+        {
+          "title": "Слабость",
+          "description": "Грех"
+        },
+        {
+          "title": "Цели",
+          "description": "Мир и спокойствие"
+        }
       ],
-      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
-      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
-      },
-      {
-        "id": 3,
+      "inventory": [
+        "туалетка",
+        "фаллос",
+        "дилдо",
+        "машина",
+        "базука"
+      ],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
+    },
+    {
+      "id": "3",
       "name": "Софийнис",
       "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Броня", "count": "9"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
+        {
+          "name": "Здоровье",
+          "count": "13"
+        },
+        {
+          "name": "Броня",
+          "count": "12"
+        },
+        {
+          "name": "Класс",
+          "count": "мечник"
+        },
+        {
+          "name": "Раса",
+          "count": "человек"
+        }
       ],
       "stats": [
-        {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "+4"},
-        {"name": "Выносл.", "count": "+2"},
-        {"name": "Интелект", "count": "+3"},
-        {"name": "Мудрость", "count": "+3"},
-        {"name": "Харизма", "count": "-1"}
+        {
+          "name": "Сила",
+          "count": "+1"
+        },
+        {
+          "name": "Ловкость",
+          "count": "+4"
+        },
+        {
+          "name": "Выносл.",
+          "count": "+2"
+        },
+        {
+          "name": "Интелект",
+          "count": "+3"
+        },
+        {
+          "name": "Мудрость",
+          "count": "+3"
+        },
+        {
+          "name": "Харизма",
+          "count": "-1"
+        }
       ],
       "skills": [
-        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+        {
+          "title": "Какое-то заклинание",
+          "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание2",
+          "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание3",
+          "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание4",
+          "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        }
       ],
       "personality": [
-        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
-        {"title": "Привязанности", "description": "Дочка"},
-        {"title": "Слабость", "description": "Грех"},
-        {"title": "Цели", "description": "Мир и спокойствие"}
+        {
+          "title": "Черты характеры",
+          "description": "Спокойный, сдержанный, альтруист"
+        },
+        {
+          "title": "Привязанности",
+          "description": "Дочка"
+        },
+        {
+          "title": "Слабость",
+          "description": "Грех"
+        },
+        {
+          "title": "Цели",
+          "description": "Мир и спокойствие"
+        }
       ],
-      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
-      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
-      },
-      {
-        "id": 4,
+      "inventory": [
+        "туалетка",
+        "фаллос",
+        "дилдо",
+        "машина",
+        "базука"
+      ],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
+    },
+    {
+      "id": "4",
       "name": "Геральт из Ривии",
       "info": [
-        {"name": "Здоровье", "count": "5"},
-        {"name": "Броня", "count": "9"},
-        {"name": "Класс", "count": "мечник"},
-        {"name": "Раса", "count": "человек"}
+        {
+          "name": "Здоровье",
+          "count": "5"
+        },
+        {
+          "name": "Броня",
+          "count": "13"
+        },
+        {
+          "name": "Класс",
+          "count": "мечник"
+        },
+        {
+          "name": "Раса",
+          "count": "человек"
+        }
       ],
       "stats": [
-        {"name": "Сила", "count": "+1"},
-        {"name": "Ловкость", "count": "+4"},
-        {"name": "Выносл.", "count": "+2"},
-        {"name": "Интелект", "count": "+3"},
-        {"name": "Мудрость", "count": "+3"},
-        {"name": "Харизма", "count": "-1"}
+        {
+          "name": "Сила",
+          "count": "+1"
+        },
+        {
+          "name": "Ловкость",
+          "count": "+4"
+        },
+        {
+          "name": "Выносл.",
+          "count": "+2"
+        },
+        {
+          "name": "Интелект",
+          "count": "+3"
+        },
+        {
+          "name": "Мудрость",
+          "count": "+3"
+        },
+        {
+          "name": "Харизма",
+          "count": "-1"
+        }
       ],
       "skills": [
-        {"title": "Какое-то заклинание", "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание2", "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание3", "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"},
-        {"title": "Какое-то заклинание4", "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"}
+        {
+          "title": "Какое-то заклинание",
+          "description": "Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание2",
+          "description": "2Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание3",
+          "description": "3Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        },
+        {
+          "title": "Какое-то заклинание4",
+          "description": "4Ебашит так жёстко, шо пиздкец прям вааааааааааауууууууууууу"
+        }
       ],
       "personality": [
-        {"title": "Черты характеры", "description": "Спокойный, сдержанный, альтруист"},
-        {"title": "Привязанности", "description": "Дочка"},
-        {"title": "Слабость", "description": "Грех"},
-        {"title": "Цели", "description": "Мир и спокойствие"}
+        {
+          "title": "Черты характеры",
+          "description": "Спокойный, сдержанный, альтруист"
+        },
+        {
+          "title": "Привязанности",
+          "description": "Дочка"
+        },
+        {
+          "title": "Слабость",
+          "description": "Грех"
+        },
+        {
+          "title": "Цели",
+          "description": "Мир и спокойствие"
+        }
       ],
-      "inventory": ["туалетка", "фаллос", "дилдо", "машина", "базука"],
-      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"  
-      }]
+      "inventory": [
+        "туалетка",
+        "фаллос",
+        "дилдо",
+        "машина",
+        "базука"
+      ],
+      "history": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda pariatur tenetur exercitationem excepturi ad perferendis dolorem deleniti nobis, voluptates, ipsa sapiente beatae dolorum sed sint aliquid magnam possimus sit eveniet necessitatibus blanditiis? Similique, eum. Tempora labore enim, sunt quaerat dolore eius rerum vitae velit sequi ipsam doloremque veniam pariatur ex recusandae laudantium asperiores, omnis assumenda. Quod sint exercitationem asperiores dolores ut vero molestiae? Eligendi, ab fugiat nobis iusto delectus animi reiciendis repellat placeat natus architecto nostrum? Aut odio repellat voluptatibus nam, exercitationem voluptates? Explicabo consequatur saepe, labore, dolorem odio vero doloremque, aperiam officiis illo quod neque possimus natus repellendus earum?"
+    }
+  ]
 }
