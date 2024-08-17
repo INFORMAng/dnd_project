@@ -77,11 +77,11 @@ body {
   margin: 0 20px;
   height: 100%;
   width: 300px;
-  background: rgba(46, 97, 53, 0.8);
+  background: url(../img/witcher/witcher_medium.png);
+  background-size: cover;
   padding: 1rem;
   border-radius: 20px;
 }
-
 
 /* ----------------------Персонаж------------------------- */
 
@@ -93,9 +93,10 @@ body {
 }
 
 .character__img {
-  background: rgba(76, 129, 89, 0.9);
+  background: url(../img/witcher/witcher_large.png);
   height: 100%;
   width: 34%;
+  background-size: cover;
 }
 
 .character__body {
@@ -154,7 +155,6 @@ body {
 }
 
 .character__personality {
-  
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -292,4 +292,8 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.pointer {
+  cursor: pointer;
 }

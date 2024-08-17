@@ -9,6 +9,13 @@ export interface ICharacter {
   history: string;
 }
 
+export interface ICharacterInfo extends Pick<ICharacter, 'id' | 'name' | 'info'> {
+  charHealth?: string;
+  charArmor?: string;
+  charClass?: string;
+  charRace?: string;
+}
+
 export interface ICharacterScheme {
   characters: ICharacter[]
 }

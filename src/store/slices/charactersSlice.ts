@@ -16,9 +16,19 @@ export const charactersSlice = createSlice({
       saveArrayToLocalStorage('localCharsData', charactersData)
       state.characters = charactersData;
     },
+    setCharacterInfoData: (state, action) => {
+      const characterData = action.payload
+
+      state.characters.forEach((character, index) => {
+        if (character.id === characterData.id) {
+          state.characters[index] = characterData
+        }
+      })
+      saveArrayToLocalStorage('localCharsData', state.characters)
+    }
   },
 })
 
-export const { setCharactersData } = charactersSlice.actions
+export const { setCharactersData, setCharacterInfoData } = charactersSlice.actions
 
 export default charactersSlice.reducer

@@ -11,14 +11,13 @@ const GameMap = () => {
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
   const {data: characters} = useGetCharacters(null)
 
-  useEffect(() => {
+  useEffect(() => {1
     if (!isLocalCharsData && characters) {
       dispatch(setCharactersData(characters))
     } else {
       dispatch(setCharactersData(isLocalCharsData))
     }
   }, [dispatch, characters])
-
 
   return (
     <div className='map__page'>

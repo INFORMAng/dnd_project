@@ -1,6 +1,8 @@
 import React, { memo, FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ICharacter } from '../types/character'
+import { useSelector } from 'react-redux';
+import { getCharInfoById } from '../store/selectors/charactersSelectors';
 
 interface CharacterCardProps {
   key: number;
@@ -9,12 +11,13 @@ interface CharacterCardProps {
 
 const CharacterCard = (props: CharacterCardProps) => {
   const router = useNavigate()
-  const {name, info: charInfo, id} = props.character
-  const [charClass, charHealth] = [charInfo[2].count, charInfo[0].count]
+  const characterInfo = useSelector(() => getCharInfoById(props.character))
   
-  if (!props.character) {
+  if (!characterInfo) {
     return <div>Invalid character data</div>
   }
+  
+  const {id, name, charClass, charHealth} = characterInfo
 
   return (
     <div className="card__character">

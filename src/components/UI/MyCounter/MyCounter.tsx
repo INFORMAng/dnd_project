@@ -2,6 +2,8 @@ import React, { memo } from 'react'
 import cl from "./MyCounter.module.css"
 import { useUpdateCharacters } from '../../../store/services/characterApi'
 import { ICharacter } from '../../../types/character';
+import { useAppDispatch } from '../../../helpers/hooks/useAppDispatch/useAppDispatch';
+import { setCharacterInfoData, setCharactersData } from '../../../store/slices/charactersSlice';
 
 interface CounterProps {
   character: ICharacter;
@@ -11,6 +13,7 @@ interface CounterProps {
 const Counter = (props: CounterProps) => {
   const {character, type} = props
   const [updateCharacter] = useUpdateCharacters()
+  const dispatch = useAppDispatch()
 
   const handleInfoChange = (type: string, delta: number) => {
     const updatedInfo = character.info.map(item => {
@@ -20,7 +23,9 @@ const Counter = (props: CounterProps) => {
       return item
     })
 
-    updateCharacter({...character, info: updatedInfo})
+    const newCharacter = {...character, info: updatedInfo}
+    dispatch(setCharacterInfoData(newCharacter))
+    updateCharacter(newCharacter)
   }
 
   return (

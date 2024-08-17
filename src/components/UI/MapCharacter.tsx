@@ -2,7 +2,8 @@ import React, { memo } from 'react'
 import { ICharacter } from '../../types/character';
 import { useNavigate, useParams } from 'react-router-dom';
 import MyCounter from './MyCounter/MyCounter';
-import { useUpdateCharacters } from '../../store/services/characterApi';
+import { useSelector } from 'react-redux';
+import { getCharInfoById } from '../../store/selectors/charactersSelectors';
 
 interface MapCharacterProps {
   key: number;
@@ -11,12 +12,13 @@ interface MapCharacterProps {
 
 const MapCharacter = (props: MapCharacterProps) => {
   const router = useNavigate()
-  const {id, name, info: charInfo} = props.character
-  const [charHealth, charArmor] = [charInfo[0].count, charInfo[1].count]
-
-  if(!props.character) {
-    return <div>Character is not found</div>
+  const characterInfo = useSelector(() => getCharInfoById(props.character))
+  
+  if (!characterInfo) {
+    return <div>Invalid character data</div>
   }
+  
+  const {id, name, charArmor, charHealth} = characterInfo
 
   return (
         <div className="map__character">
@@ -31,8 +33,7 @@ const MapCharacter = (props: MapCharacterProps) => {
             </div> 
           </div>
           <div 
-            className="character__name"
-            style={{cursor: "pointer"}}
+            className="character__name pointer"
             onClick={() => router(`/characters/${id}`)}
           >
             {name}
