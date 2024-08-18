@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { getChar } from '../store/selectors/charactersSelectors'
+import { getCharacter } from '../store/selectors/charactersSelectors'
 import {StateSchema} from "../store/config/stateSchema";
 
 const CharacterPage = () => {
   const {id} = useParams()
-  const character = useSelector((state: StateSchema) => getChar(state, id))
+  const character = useSelector((state: StateSchema) => getCharacter(state, id))
   
   if(!character) {
     return <div>character is not found...</div>

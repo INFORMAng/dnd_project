@@ -1,5 +1,5 @@
 export interface ICharacter {
-  id: number;
+  id: string;
   name: string;
   info: itemCount[];
   stats: itemCount[];
@@ -9,7 +9,7 @@ export interface ICharacter {
   history: string;
 }
 
-export interface ICharacterInfo extends Pick<ICharacter, 'id' | 'name' | 'info'> {
+export interface ICharacterInfo {
   charHealth?: string;
   charArmor?: string;
   charClass?: string;

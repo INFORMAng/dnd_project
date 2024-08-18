@@ -17,8 +17,9 @@ const Counter = (props: CounterProps) => {
 
   const handleInfoChange = (type: string, delta: number) => {
     const updatedInfo = character.info.map(item => {
-      if(item.name === type) {
-        return {...item, count: (+item.count+delta).toString()}
+      if (item.name === type) {
+        const count = Number(item.count)
+        return {...item, count: (count + delta).toString()}
       }
       return item
     })

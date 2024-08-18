@@ -14,7 +14,7 @@ const charactersApi = rtkApi.injectEndpoints({
             ]
             : [{type: 'Characters', id: 'LIST' as const}],
         }),
-        updateCharacters: build.mutation<void, Partial<ICharacter> & {id: number}>({
+        updateCharacters: build.mutation<void, ICharacter>({
             query: (character) => ({
                 url: `/characters/${character.id}`,
                 method: 'PATCH',

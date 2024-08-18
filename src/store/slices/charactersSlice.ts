@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {ActionCreatorWithPayload, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
-import {ICharacterScheme} from '../../types/character.js'
+import {ICharacter, ICharacterScheme} from '../../types/character.js'
 
 const initialState: ICharacterScheme = {
   characters: [],
@@ -10,21 +10,22 @@ export const charactersSlice = createSlice({
   name: 'characters',
   initialState,
   reducers: {
-    setCharactersData: (state, action) => {
+    setCharactersData: (state, action: PayloadAction<ICharacter[]>) => {
       const charactersData = action.payload
       
       saveArrayToLocalStorage('localCharsData', charactersData)
       state.characters = charactersData;
     },
-    setCharacterInfoData: (state, action) => {
+    setCharacterInfoData: (state, action: PayloadAction<ICharacter>) => {
       const characterData = action.payload
+      const characters = state.characters
 
-      state.characters.forEach((character, index) => {
+      characters.forEach((character, index) => {
         if (character.id === characterData.id) {
-          state.characters[index] = characterData
+          characters[index] = characterData
         }
       })
-      saveArrayToLocalStorage('localCharsData', state.characters)
+      saveArrayToLocalStorage('localCharsData', characters)
     }
   },
 })

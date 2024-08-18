@@ -3,7 +3,7 @@ import { ICharacter } from '../../types/character';
 import { useNavigate, useParams } from 'react-router-dom';
 import MyCounter from './MyCounter/MyCounter';
 import { useSelector } from 'react-redux';
-import { getCharInfoById } from '../../store/selectors/charactersSelectors';
+import {getCharacter} from "../../store/selectors/charactersSelectors";
 
 interface MapCharacterProps {
   key: number;
@@ -12,7 +12,7 @@ interface MapCharacterProps {
 
 const MapCharacter = (props: MapCharacterProps) => {
   const router = useNavigate()
-  const characterInfo = useSelector(() => getCharInfoById(props.character))
+  const characterInfo = useSelector(() => getCharacter(props.character))
   
   if (!characterInfo) {
     return <div>Invalid character data</div>
