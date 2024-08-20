@@ -1,29 +1,34 @@
 import React, { memo, FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ICharacter } from '../types/character'
+import { useSelector } from 'react-redux';
+import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors';
+import {StateSchema} from "../store/config/stateSchema";
 
 interface CharacterCardProps {
-  key: number;
-  char: ICharacter;
+  character: ICharacter;
+  key: string
 }
 
 const CharacterCard = (props: CharacterCardProps) => {
-  const router = useNavigate()
-  const {name, info: charInfo, id} = props.char
-  const [charClass, charHealth] = [charInfo[1].count, charInfo[0].count]
+    const {character, key} = props
+    const router = useNavigate()
+  const characterInfoCount = useSelector((state: StateSchema) => getCharacterInfoCounts(state, character.id))
   
-  if (!props.char) {
+  if (!characterInfoCount) {
     return <div>Invalid character data</div>
   }
 
+  const {charHealth, charClass} = characterInfoCount
+
   return (
-    <div className="card__character">
-        <div>
-          <h2>{name}</h2>
+    <div className="card__character" key={character.id}>
+        <div key={character.id}>
+          <h2>{character.name}</h2>
           <div>Класс: {charClass}</div>
           <div>Здоровье: {charHealth}</div>
         </div>
-        <button onClick={() => router(`/characters/${id}`)}>ОПИСАНИЕ</button>
+        <button onClick={() => router(`/characters/${character.id}`)}>ОПИСАНИЕ</button>
       </div>
   )
 }

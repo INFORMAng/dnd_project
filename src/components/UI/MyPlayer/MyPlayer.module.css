@@ -1,0 +1,11 @@
+.myPlayer {
+  background: rgb(45, 236, 127);
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  line-height: 50px;
+}

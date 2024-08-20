@@ -1,0 +1,23 @@
+.counterWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  width: 20px;
+  height: 20px;
+  background: rgb(247, 227, 17);
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.counter:hover {
+  background: rgb(243, 232, 106);
+}
+
+.counter:active {
+  background: rgb(159, 147, 8);
+}
+
+

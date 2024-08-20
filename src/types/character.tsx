@@ -1,5 +1,5 @@
 export interface ICharacter {
-  id: number;
+  id: string;
   name: string;
   info: itemCount[];
   stats: itemCount[];
@@ -9,8 +9,15 @@ export interface ICharacter {
   history: string;
 }
 
+export interface ICharacterInfo {
+  charHealth?: string;
+  charArmor?: string;
+  charClass?: string;
+  charRace?: string;
+}
+
 export interface ICharacterScheme {
-  chars: ICharacter[]
+  characters: ICharacter[]
 }
 
 export interface IResponse {
@@ -19,6 +26,6 @@ export interface IResponse {
   error?: string;
 }
 
-interface itemCount {name: string; count: string}
+export interface itemCount {name: string; count: string}
 interface itemDescription {title: string; description: string}
 

@@ -5,7 +5,7 @@ import {StateSchema} from "./stateSchema";
 
 const rootReducers: ReducersMapObject<StateSchema> = {
   characters: charactersReducer,
-    [rtkApi.reducerPath]: rtkApi.reducer,
+  [rtkApi.reducerPath]: rtkApi.reducer,
 }
 
 export const store = configureStore({
