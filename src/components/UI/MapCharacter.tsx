@@ -1,34 +1,36 @@
 import React, { memo } from 'react'
 import { ICharacter } from '../../types/character';
 import { useNavigate, useParams } from 'react-router-dom';
-import MyCounter from './MyCounter/MyCounter';
+import MyInfoCounter from './MyCounter/MyInfoCounter';
 import { useSelector } from 'react-redux';
-import {getCharacter} from "../../store/selectors/charactersSelectors";
+import {getCharacterInfoCounts} from "../../store/selectors/charactersSelectors";
+import { StateSchema } from '../../store/config/stateSchema';
 
 interface MapCharacterProps {
-  key: number;
+  key: string;
   character: ICharacter;
 }
 
 const MapCharacter = (props: MapCharacterProps) => {
   const router = useNavigate()
-  const characterInfo = useSelector(() => getCharacter(props.character))
+  const characterInfo = useSelector((state: StateSchema) => getCharacterInfoCounts(state, props.character.id))
   
   if (!characterInfo) {
     return <div>Invalid character data</div>
   }
   
-  const {id, name, charArmor, charHealth} = characterInfo
+  const {charHealth, charArmor} = characterInfo
+  const {id, name} = props.character
 
   return (
         <div className="map__character">
           <div className="map__character__stats">
             <div className="map__character__health__block">
               <div className="map__character__health">{charHealth}</div>
-              <MyCounter character={props.character} type={'Здоровье'}/>
+              <MyInfoCounter character={props.character} type={'Здоровье'}/>
             </div>
             <div className="map__character__health__block">
-              <MyCounter character={props.character} type={'Броня'}/>
+              <MyInfoCounter character={props.character} type={'Броня'}/>
               <div className="map__character__armor">{charArmor}</div>
             </div> 
           </div>

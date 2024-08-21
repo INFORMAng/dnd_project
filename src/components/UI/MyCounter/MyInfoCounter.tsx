@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import cl from "./MyCounter.module.css"
+import cl from "./MyInfoCounter.module.css"
 import { useUpdateCharacters } from '../../../store/services/characterApi'
 import { ICharacter } from '../../../types/character';
 import { useAppDispatch } from '../../../helpers/hooks/useAppDispatch/useAppDispatch';

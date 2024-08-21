@@ -8,6 +8,22 @@ export const getCharacter = (state: StateSchema, charId: string | number | undef
 
 export const getCharacterInfoCounts = createSelector(
     [getCharacter], (character): ICharacterInfo => {
-        return character.info.map(info => info.count) as ICharacterInfo
+        return (character?.info || []).reduce((acc, item) => {
+            switch (item.name) {
+              case "Здоровье":
+                acc.charHealth = item.count;
+                break;
+              case "Броня":
+                acc.charArmor = item.count;
+                break;
+              case "Класс":
+                acc.charClass = item.count;
+                break;
+              case "Раса":
+                acc.charRace = item.count;
+                break;
+            }
+            return acc;
+          }, {} as ICharacterInfo);
     }
 )

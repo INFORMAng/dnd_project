@@ -11,7 +11,7 @@ interface CharacterCardProps {
 }
 
 const CharacterCard = (props: CharacterCardProps) => {
-    const {character, key} = props
+    const {character} = props
     const router = useNavigate()
   const characterInfoCount = useSelector((state: StateSchema) => getCharacterInfoCounts(state, character.id))
   
