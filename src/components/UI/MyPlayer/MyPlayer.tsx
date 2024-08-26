@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { Rnd } from 'react-rnd'
-import cl from "./MyPlayer.module.css"
+import cl from "./MyPlayer.module.scss"
 
 interface MyPlayerProps {
   key: string;

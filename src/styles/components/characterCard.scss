@@ -1,0 +1,12 @@
+.card__character {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 20px;
+  height: 100%;
+  width: 300px;
+  background: url(../img/witcher/witcher_medium.png);
+  background-size: cover;
+  padding: 1rem;
+  border-radius: 20px;
+}

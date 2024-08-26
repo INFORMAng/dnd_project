@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
-import cl from "./MyInfoCounter.module.css"
+import cl from "./MyInfoCounter.module.scss"
 import { useUpdateCharacters } from '../../../store/services/characterApi'
-import { ICharacter } from '../../../types/character';
+import { ICharacter } from '../../../types/characterTypes';
 import { useAppDispatch } from '../../../helpers/hooks/useAppDispatch/useAppDispatch';
-import { setCharacterInfoData, setCharactersData } from '../../../store/slices/charactersSlice';
+import { setCharacterInfoData} from '../../../store/slices/charactersSlice';
 
 interface CounterProps {
   character: ICharacter;

@@ -1,6 +1,6 @@
 import {ActionCreatorWithPayload, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
-import {ICharacter, ICharacterScheme} from '../../types/character.js'
+import {ICharacter, ICharacterScheme} from '../../types/characterTypes.js'
 
 const initialState: ICharacterScheme = {
   characters: [],

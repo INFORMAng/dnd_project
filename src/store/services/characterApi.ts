@@ -1,4 +1,4 @@
-import { ICharacter } from './../../types/character';
+import { ICharacter } from '../../types/characterTypes.js';
 import {rtkApi} from "../../API/rtkApi.js";
 
 const charactersApi = rtkApi.injectEndpoints({

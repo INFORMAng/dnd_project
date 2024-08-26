@@ -1,20 +1,19 @@
-import React, { memo, FC } from 'react'
+import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ICharacter } from '../types/character'
 import { useSelector } from 'react-redux';
-import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors';
-import {StateSchema} from "../store/config/stateSchema";
+import {StateSchema} from "../../store/config/stateSchema";
+import {getCharacterInfoCounts} from '../../store/selectors/charactersSelectors'
+import { ICharacter } from '../../types/characterTypes';
 
 interface CharacterCardProps {
   character: ICharacter;
-  key: string
 }
 
 const CharacterCard = (props: CharacterCardProps) => {
-    const {character} = props
-    const router = useNavigate()
+  const {character} = props
+  const router = useNavigate()
   const characterInfoCount = useSelector((state: StateSchema) => getCharacterInfoCounts(state, character.id))
-  
+
   if (!characterInfoCount) {
     return <div>Invalid character data</div>
   }

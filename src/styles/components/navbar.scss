@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.navbar__links {
+  font-size: 30px;
+  margin: 0 30px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar__links:active {
+  color: rgb(149, 238, 170);
+}

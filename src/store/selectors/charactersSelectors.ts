@@ -1,5 +1,5 @@
 import { StateSchema } from './../config/stateSchema';
-import {ICharacter, ICharacterInfo} from "../../types/character.js";
+import {ICharacter, ICharacterInfo} from "../../types/characterTypes.js";
 import {createSelector} from "@reduxjs/toolkit";
 
 export const getAllCharacters = (state: StateSchema) => state.characters.characters
