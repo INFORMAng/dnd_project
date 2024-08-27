@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Avalon';
+  src: url('../fonts/Avalon.ttf')
+}
+
+body {
+  background-image: url(../img/background.jpg);
+  font-family: 'Avalon';
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App {
+  width: 75%;
+  background: rgba(1, 1, 1, 0.6);
+  height: 100vh;
+  padding: 2rem;
+  padding-top: 0;
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
