@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import {StateSchema} from "../../store/config/stateSchema";
-import {getCharacterInfoCounts} from '../../store/selectors/charactersSelectors'
-import { ICharacter } from '../../types/characterTypes';
+import {StateSchema} from "../store/config/stateSchema";
+import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors'
+import { ICharacter } from '../types/characterTypes';
 
 interface CharacterCardProps {
   character: ICharacter;
