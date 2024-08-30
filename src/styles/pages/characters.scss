@@ -1,6 +1,5 @@
 .main__characters {
+  @include flex-direction-justify(row, space-between);
   height: 95%;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
 }

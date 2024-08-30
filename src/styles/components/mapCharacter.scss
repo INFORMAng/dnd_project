@@ -1,0 +1,42 @@
+.map__character {
+  @include flex-direction-justify(column, space-between);
+  background: url(/img/geralt.webp);
+  background-size: cover;
+  border-radius: 20px;
+  border: 3px solid white;
+  padding: 0.5rem 1rem;
+  margin: 0 5px;
+  width: 24%;
+  height: 100%;
+
+  &__block {
+    @include flex-direction-justify(row, space-between);
+
+    &__stats {
+      display: flex;
+    }
+  }
+
+  &__health, &__armor {
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: 1px solid white;
+
+    &.map__character__health {
+      background-color: red;
+    }
+
+    &.map__character__armor {
+      background-color: grey;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    cursor: pointer;
+  }
+}

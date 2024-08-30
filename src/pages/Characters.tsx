@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import CharacterCard from '../components/characterCard/CharacterCard'
+import CharacterCard from '../components/CharacterCard'
 import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'

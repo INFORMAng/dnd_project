@@ -1,7 +1,7 @@
 import './styles/App.scss'
 import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './components/AppRouter'
-import Navbar from './components/UI/navbar/Navbar'
+import Navbar from './components/Navbar'
 
 
 function App() {
