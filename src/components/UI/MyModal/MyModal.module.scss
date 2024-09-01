@@ -1,0 +1,19 @@
+@import '../../../styles/utils/mixins.scss';
+
+.myModal {
+  @include flex-center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+
+  &Content {
+    width: 50%;
+    height: 50%;
+    background: #32fb5d;
+  }
+}

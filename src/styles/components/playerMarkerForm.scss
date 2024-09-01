@@ -1,0 +1,9 @@
+.player_marker_form {
+  @include flex-center;
+  background: red;
+
+  &_content {
+    text-align: center;
+    background: blue;
+  }
+}
