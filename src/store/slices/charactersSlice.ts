@@ -1,4 +1,4 @@
-import {ActionCreatorWithPayload, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
 import {ICharacter, ICharacterScheme} from '../../types/characterTypes.js'
 

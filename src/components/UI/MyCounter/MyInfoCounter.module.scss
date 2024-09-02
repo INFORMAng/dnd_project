@@ -10,14 +10,14 @@
   border-radius: 50%;
   text-align: center;
   border: 1px solid white;
-}
 
-.counter:hover {
-  background: rgb(243, 232, 106);
-}
+  &:hover {
+    background: rgb(243, 232, 106);
+  }
 
-.counter:active {
-  background: rgb(159, 147, 8);
+  &:active {
+    background: rgb(159, 147, 8);
+  }
 }
 
 
