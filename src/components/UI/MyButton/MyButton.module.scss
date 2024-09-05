@@ -1,0 +1,28 @@
+@mixin button-size-padding($fSize: 30px, $padding: 0.5rem){
+  width: 100%;
+  font-size: $fSize;
+  padding: $padding;      
+}
+
+.myButton {
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.small {
+  @include button-size-padding(10px, 0.15rem);
+}
+
+.medium {
+  @include button-size-padding(20px, 0.25rem);
+}
+
+.large {
+  @include button-size-padding();
+}
+
+.default {
+  background-color: rgb(143, 110, 79);
+  border: 2px solid rgb(138, 104, 18);
+}

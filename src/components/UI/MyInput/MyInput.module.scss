@@ -1,0 +1,23 @@
+.myInput {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid rgb(138, 104, 18);
+  background-color: rgb(143, 110, 79);
+  font-size: 1.5rem;
+  color: black;
+
+  &:focus {
+    border-color: goldenrod;
+    outline: none;
+    color: goldenrod;
+  }
+
+  &::placeholder {
+    color: rgba($color: #000000, $alpha: 0.7);
+    font-style: italic;
+  }
+}

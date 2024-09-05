@@ -1,6 +1,8 @@
-import { ReactNode } from "react";
-
 export interface IModalScheme {
   isOpen: boolean;
-  content: ReactNode;
+  contentType: string;
+}
+
+export enum MODAL_CONTENT_TYPE {
+  MARKER_FORM = 'characterMarkerForm',
 }

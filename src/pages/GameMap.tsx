@@ -6,15 +6,18 @@ import { setCharactersData } from '../store/slices/charactersSlice'
 import MapCharacter from '../components/MapCharacter'
 import MyPlayer from '../components/UI/MyPlayer/MyPlayer'
 import { openModal } from '../store/slices/modalSlice'
-import PlayerMarkerForm from '../components/PlayerMarkerForm'
+import CharacterMarkerForm from '../components/CharacterMarkerForm'
+import { MODAL_CONTENT_TYPE } from '../types/modalTypes'
+import MyButton from '../components/UI/MyButton/MyButton'
+import { BUTTON_COLOR_TYPE, BUTTON_SIZE_TYPE } from '../helpers/constants/button'
 
 const GameMap = () => {
   const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
   const {data: characters} = useGetCharacters(null)
 
-  const AddNewPlayerMakrer = () => {
-    dispatch(openModal(<PlayerMarkerForm/>))
+  const AddNewPlayerMarker = () => {
+    dispatch(openModal(MODAL_CONTENT_TYPE.MARKER_FORM))
   }
 
   useEffect(() => {1
@@ -32,7 +35,7 @@ const GameMap = () => {
           <MapCharacter key={character.id} character={character}/>
         ))}
       </div>
-      <button onClick={AddNewPlayerMakrer}>Добавить Маркер</button>
+      <MyButton buttonClasses={[BUTTON_SIZE_TYPE.M, BUTTON_COLOR_TYPE.DEFAULT]} onClick={AddNewPlayerMarker}>Добавить Маркер</MyButton>
       <div className="map__page__main">
         <MyPlayer key='firstPlayer' name='P1'/>
         <MyPlayer key='secondPlayer' name='P2'/>
