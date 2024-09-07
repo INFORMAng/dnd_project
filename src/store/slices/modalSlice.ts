@@ -3,20 +3,17 @@ import { IModalScheme } from "../../types/modalTypes";
 
 const initialState: IModalScheme = {
   isOpen: false,
-  contentType: '',
 }
 
 export const modalSlice = createSlice({
   name: 'modal',
   initialState,
   reducers: {
-    openModal: (state, action: PayloadAction<string>) => {
+    openModal: (state) => {
       state.isOpen = true;
-      state.contentType = action.payload
     },
     closeModal: (state) => {
       state.isOpen = false;
-      state.contentType = '';
     }
   }
 })

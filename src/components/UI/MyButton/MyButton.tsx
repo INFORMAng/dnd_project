@@ -1,22 +1,31 @@
-import React, { ButtonHTMLAttributes, FC } from 'react'
+import React, { ButtonHTMLAttributes, FC, memo } from 'react'
 import cl from './MyButton.module.scss'
+import classNames from 'classnames';
+
+export enum BUTTON_SIZE_TYPE {
+  S = "small",
+  M = "medium",
+  L = "large",
+}
+
+export enum BUTTON_THEME_TYPE {
+  DEFAULT = 'default',
+}
 
 interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  buttonClasses?: string[];
+  size: BUTTON_SIZE_TYPE;
+  theme: BUTTON_THEME_TYPE;
 }
 
 
-const MyButton: FC<MyButtonProps> = ({onClick, children, buttonClasses, ...props}) => {
-  const rootClasses = [cl.myButton]
 
-  if (buttonClasses) {
-    buttonClasses.forEach(param => rootClasses.push(cl[param]))
-  }
+const MyButton: FC<MyButtonProps> = (props) => {
+  const {onClick, children, size, theme} = props
 
   return (
     <button 
-      className={rootClasses.join(' ')} 
+      className={classNames(cl.myButton, cl[size], cl[theme])} 
       onClick={onClick} 
       {...props}
     >
@@ -25,4 +34,4 @@ const MyButton: FC<MyButtonProps> = ({onClick, children, buttonClasses, ...props
   )
 }
 
-export default MyButton
+export default memo(MyButton)

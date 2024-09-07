@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import cl from './MyInput.module.scss'
 
 interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -15,4 +15,4 @@ const MyInput: FC<MyInputProps> = ({onChange, ...props}) => {
   )
 }
 
-export default MyInput
+export default memo(MyInput)

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import cl from "./MySelect.module.scss"
 
 interface IOption {
@@ -20,7 +20,7 @@ const MySelect: FC<MySelectProps> = ({onChange, options, defaultOption, value, .
       onChange={onChange}
       {...props}
     >
-      <option value={""} disabled>{defaultOption}</option>
+      <option value='' disabled>{defaultOption}</option>
       {options.map(option => (
         <option key={option.value} value={option.value}>{option.title}</option>
       ))}
@@ -28,4 +28,4 @@ const MySelect: FC<MySelectProps> = ({onChange, options, defaultOption, value, .
   )
 }
 
-export default MySelect
+export default memo(MySelect)

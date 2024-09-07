@@ -4,10 +4,14 @@ import { IMarkerState, markerColorOptions, markerSizeOptions } from '../helpers/
 import MySelect from './UI/MySelect/MySelect'
 import { v4 as uuidv4 } from 'uuid'
 import MyButton from './UI/MyButton/MyButton'
-import { BUTTON_COLOR_TYPE, BUTTON_SIZE_TYPE } from '../helpers/constants/button'
+import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton'
+import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
+import { closeModal } from '../store/slices/modalSlice'
 
 const CharacterMarkerForm = () => {
-  const [markerState, setMarkerState] = useState<IMarkerState>({name: "", color: "", size: ""})
+  const dispatch = useAppDispatch()
+  const emptyMarkerState = {name: "", color: "", size: ""}
+  const [markerState, setMarkerState] = useState<IMarkerState>(emptyMarkerState)
 
   const changeMarkerName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMarkerState(prevState => ({
@@ -37,6 +41,9 @@ const CharacterMarkerForm = () => {
       ...markerState,
       id: uuidv4(),
     }
+
+    setMarkerState(emptyMarkerState)
+    dispatch(closeModal())
   }
 
   return (
@@ -65,7 +72,8 @@ const CharacterMarkerForm = () => {
       </div>
       <MyButton 
         onClick={addNewMarker} 
-        buttonClasses={[BUTTON_SIZE_TYPE.L, BUTTON_COLOR_TYPE.DEFAULT]}
+        size={BUTTON_SIZE_TYPE.L}
+        theme={BUTTON_THEME_TYPE.DEFAULT}
       >
         Создать маркер
       </MyButton>

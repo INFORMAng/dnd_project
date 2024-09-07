@@ -5,7 +5,7 @@ import {StateSchema} from "../store/config/stateSchema";
 import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors'
 import { ICharacter } from '../types/characterTypes';
 import MyButton from './UI/MyButton/MyButton';
-import { BUTTON_COLOR_TYPE, BUTTON_SIZE_TYPE } from '../helpers/constants/button';
+import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton';
 
 interface CharacterCardProps {
   character: ICharacter;
@@ -29,7 +29,7 @@ const CharacterCard = (props: CharacterCardProps) => {
           <div>Класс: {charClass}</div>
           <div>Здоровье: {charHealth}</div>
         </div>
-        <MyButton buttonClasses={[BUTTON_SIZE_TYPE.M, BUTTON_COLOR_TYPE.DEFAULT]} onClick={() => router(`/characters/${character.id}`)}>ОПИСАНИЕ</MyButton>
+        <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => router(`/characters/${character.id}`)}>ОПИСАНИЕ</MyButton>
       </div>
   )
 }

@@ -12,7 +12,6 @@ function App() {
         <BrowserRouter>
           <Navbar/>
           <AppRouter/>
-          <MyModal/>
         </BrowserRouter>
     </div>
   )

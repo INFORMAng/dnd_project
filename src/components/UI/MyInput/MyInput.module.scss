@@ -8,12 +8,10 @@
   border: 2px solid rgb(138, 104, 18);
   background-color: rgb(143, 110, 79);
   font-size: 1.5rem;
-  color: black;
 
   &:focus {
     border-color: goldenrod;
     outline: none;
-    color: goldenrod;
   }
 
   &::placeholder {
