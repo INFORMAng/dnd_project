@@ -11,9 +11,12 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.6);
 
-  &Content {
+  &__content {
+    @include flex-direction-justify(column, flex-start);
     width: 50%;
-    height: 50%;
-    background: #32fb5d;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 5px solid rgb(40, 29, 25);
+    background-color: rgb(54, 38, 33);
   }
 }
