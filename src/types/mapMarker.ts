@@ -1,7 +1,6 @@
-export interface IMarkerState {
-  name: string,
-  color: string,
-  size: string,
+
+export interface IMarkerScheme {
+  mapMarkers: IMarkerState[],
 }
 
 export enum MARKER_COLOR_TYPE {
@@ -17,10 +16,17 @@ export enum MARKER_SIZE_TYPE {
   XL = "extra_large",
 }
 
+export interface IMarkerState {
+  id: string,
+  name: string,
+  color: string,
+  size: string,
+}
+
 export const markerColorOptions = [
   {value: MARKER_COLOR_TYPE.RED, title: "Красный"},
-  {value: MARKER_COLOR_TYPE.GREEN, title: "Синий"},
-  {value: MARKER_COLOR_TYPE.BLUE, title: "Зелёный"},
+  {value: MARKER_COLOR_TYPE.GREEN, title: "Зелёный"},
+  {value: MARKER_COLOR_TYPE.BLUE, title: "Синий"},
 ]
 
 export const markerSizeOptions = [

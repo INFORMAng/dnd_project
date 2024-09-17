@@ -1,6 +1,6 @@
 @import '../../../styles/utils/mixins.scss';
 
-.myModal {
+.myModal__full_screen {
   @include flex-center;
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.6);
 
-  &__content {
+  .content {
     @include flex-direction-justify(column, flex-start);
     width: 50%;
     padding: 2rem;
@@ -20,3 +20,23 @@
     background-color: rgb(54, 38, 33);
   }
 }
+
+.myModal__flex__screen {
+  @include flex-center;
+  position: absolute;
+  height: auto;
+  width: auto;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+
+  .content {
+    @include flex-direction-justify(column, flex-start);
+    width: auto;
+    padding: 1rem;
+    border-radius: 30px;
+    border: 5px solid rgb(40, 29, 25);
+    background-color: rgb(54, 38, 33);
+  }
+}
+
+

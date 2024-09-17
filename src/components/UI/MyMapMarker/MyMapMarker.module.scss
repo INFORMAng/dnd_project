@@ -1,0 +1,49 @@
+@mixin marker-size($diameter, $fontSize) {
+  width: $diameter;
+  height: $diameter;
+  line-height: $diameter;
+  font-size: $fontSize;
+}
+
+.myMapMarker {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  line-height: 50px;
+}
+
+// ---------Цвет----------
+.red {
+  background-color: #943131;
+}
+
+.green {
+  background-color: #1f5e28;
+}
+
+.blue {
+  background-color: #212192;
+}
+// ------------------------
+
+// ---------Размер---------
+.small {
+  @include marker-size(25px, 10px)
+}
+
+.meduim {
+  @include marker-size(50px, 20px)
+}
+
+.large {
+  @include marker-size(75px, 35px)
+}
+
+.extra_large {
+  @include marker-size(100px, 50px)
+}
+// -----------------------

@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import {StateSchema} from "../store/config/stateSchema";
 import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors'
 import { ICharacter } from '../types/characterTypes';
-import MyButton from './UI/MyButton/MyButton';
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton';
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from './UI/MyButton/MyButton';
 
 interface CharacterCardProps {
   character: ICharacter;
@@ -29,7 +28,14 @@ const CharacterCard = (props: CharacterCardProps) => {
           <div>Класс: {charClass}</div>
           <div>Здоровье: {charHealth}</div>
         </div>
-        <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => router(`/characters/${character.id}`)}>ОПИСАНИЕ</MyButton>
+        <MyButton 
+          size={BUTTON_SIZE_TYPE.M} 
+          theme={BUTTON_THEME_TYPE.DEFAULT} 
+          width={BUTTON_WIDTH_TYPE.FULL} 
+          onClick={() => router(`/characters/${character.id}`)}
+        >
+          ОПИСАНИЕ
+        </MyButton>
       </div>
   )
 }

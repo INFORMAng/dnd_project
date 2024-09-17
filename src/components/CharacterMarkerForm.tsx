@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import MyInput from './UI/MyInput/MyInput'
-import { IMarkerState, markerColorOptions, markerSizeOptions } from '../helpers/constants/marker'
 import MySelect from './UI/MySelect/MySelect'
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE  } from './UI/MyButton/MyButton'
+import { IMarkerState, markerColorOptions, markerSizeOptions } from '../types/mapMarker'
 import { v4 as uuidv4 } from 'uuid'
-import MyButton from './UI/MyButton/MyButton'
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
-import { closeModal } from '../store/slices/modalSlice'
+import { useAddMarker } from '../store/services/mapMarkersApi'
+import { addMapMarker } from '../store/slices/mapMarkersSlice'
+import toastr from '../helpers/constants/toasterConfig'
 
 const CharacterMarkerForm = () => {
   const dispatch = useAppDispatch()
-  const emptyMarkerState = {name: "", color: "", size: ""}
+  const [addMarker] = useAddMarker()
+  const emptyMarkerState: IMarkerState = {id: "", name: "", color: "", size: ""}
   const [markerState, setMarkerState] = useState<IMarkerState>(emptyMarkerState)
+  
 
   const changeMarkerName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMarkerState(prevState => ({
@@ -37,13 +40,19 @@ const CharacterMarkerForm = () => {
   const addNewMarker = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault()
 
+    if (!markerState.name || !markerState.color || !markerState.size) {
+      toastr.warning('Заполните все поля', 'Внимание!')
+      return
+    }
+
     const newMarker = {
       ...markerState,
       id: uuidv4(),
     }
 
+    addMarker(newMarker)
+    dispatch(addMapMarker(newMarker))
     setMarkerState(emptyMarkerState)
-    dispatch(closeModal())
   }
 
   return (
@@ -74,6 +83,7 @@ const CharacterMarkerForm = () => {
         onClick={addNewMarker} 
         size={BUTTON_SIZE_TYPE.L}
         theme={BUTTON_THEME_TYPE.DEFAULT}
+        width={BUTTON_WIDTH_TYPE.FULL}
       >
         Создать маркер
       </MyButton>

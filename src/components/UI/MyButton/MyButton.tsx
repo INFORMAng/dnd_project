@@ -8,6 +8,11 @@ export enum BUTTON_SIZE_TYPE {
   L = "large",
 }
 
+export enum BUTTON_WIDTH_TYPE {
+  FULL = "width__full",
+  AUTO = "width__auto",
+}
+
 export enum BUTTON_THEME_TYPE {
   DEFAULT = 'default',
 }
@@ -16,17 +21,16 @@ interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size: BUTTON_SIZE_TYPE;
   theme: BUTTON_THEME_TYPE;
+  width: BUTTON_WIDTH_TYPE;
 }
 
-
-
 const MyButton: FC<MyButtonProps> = (props) => {
-  const {onClick, children, size, theme} = props
+  const {onClick, children, size, theme, width} = props
 
   return (
     <button 
-      className={classNames(cl.myButton, cl[size], cl[theme])} 
-      onClick={onClick} 
+      className={classNames(cl.myButton, cl[size], cl[theme], cl[width])}
+      onClick={onClick}  
       {...props}
     >
       {children}

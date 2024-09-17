@@ -1,33 +1,56 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
-import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
+import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import MapCharacter from '../components/MapCharacter'
-import MyPlayer from '../components/UI/MyPlayer/MyPlayer'
-import { openModal } from '../store/slices/modalSlice'
-import { MODAL_CONTENT_TYPE } from '../types/modalTypes'
-import MyButton from '../components/UI/MyButton/MyButton'
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton'
-import MyModal from '../components/UI/MyModal/MyModal'
+import { closeAllModals, closeModal, openModal } from '../store/slices/modalSlice'
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE  } from '../components/UI/MyButton/MyButton'
+import MyModal, { MODAL_CONTENT_TYPE, MODAL_SIZE_TYPE } from '../components/UI/MyModal/MyModal'
 import CharacterMarkerForm from '../components/CharacterMarkerForm'
+import { useDeleteMarker, useGetMarkers } from '../store/services/mapMarkersApi'
+import { deleteMapMarker, setMapMarkersData } from '../store/slices/mapMarkersSlice'
+import MyMapMarker from '../components/UI/MyMapMarker/MyMapMarker'
 
 const GameMap = () => {
   const dispatch = useAppDispatch()
-  const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
+  const [deleteMarker] = useDeleteMarker()
+  const isLocalCharsData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.CHARS)
+  const isLocalMarkersData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.MARKERS)
   const {data: characters} = useGetCharacters(null)
+  const {data: markers} = useGetMarkers(null)
 
-  const AddNewPlayerMarker = () => {
-    dispatch(openModal())
+  const addNewPlayerMarker = () => {
+    dispatch(openModal({id: MODAL_CONTENT_TYPE.MARKER_FORM}))
   }
 
-  useEffect(() => {1
+  const handleCloseAllModals = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation()
+    dispatch(closeAllModals())
+  }
+
+  const deletePlayerMarker = (id: string) => {
+    dispatch(deleteMapMarker(id))
+    deleteMarker(id)
+
+    dispatch(closeModal(MODAL_CONTENT_TYPE.MARKER_MENU))
+  }
+
+  useEffect(() => {
     if (!isLocalCharsData && characters) {
       dispatch(setCharactersData(characters))
     } else {
       dispatch(setCharactersData(isLocalCharsData))
     }
   }, [dispatch, characters])
+
+  useEffect(() => {
+    if (!isLocalMarkersData && markers) {
+      dispatch(setMapMarkersData(markers))
+    } else {
+      dispatch(setMapMarkersData(isLocalMarkersData))
+    }
+  }, [dispatch, markers])
 
   return (
     <div className='map__page'>
@@ -36,14 +59,36 @@ const GameMap = () => {
           <MapCharacter key={character.id} character={character}/>
         ))}
       </div>
-      <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={AddNewPlayerMarker}>Добавить Маркер</MyButton>
-      <div className="map__page__main">
-        <MyPlayer key='firstPlayer' name='P1'/>
-        <MyPlayer key='secondPlayer' name='P2'/>
-        <MyPlayer key='thirdPlayer' name='P3'/>
-        <MyPlayer key='fourthPlayer' name='P4'/>
+      <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={addNewPlayerMarker} width={BUTTON_WIDTH_TYPE.FULL}>Добавить Маркер</MyButton>
+      <div className="map__page__main" onClick={handleCloseAllModals}>
+        {markers?.map((marker, index) => (
+          <MyMapMarker 
+            key={marker.id}
+            id={marker.id} 
+            index={index+1}
+            name={marker.name} 
+            color={marker.color} 
+            size={marker.size}
+          />
+        ))}
       </div>
-      <MyModal>
+      {markers?.map(marker => (
+        <MyModal
+          key={`markerMenu_${marker.id}`}
+          size={MODAL_SIZE_TYPE.FLEX_SCREEN}
+          id={`markerMenu_${marker.id}`}
+        >
+          <MyButton
+            size={BUTTON_SIZE_TYPE.M}
+            theme={BUTTON_THEME_TYPE.DEFAULT}
+            width={BUTTON_WIDTH_TYPE.AUTO}
+            onClick={() => deletePlayerMarker(marker.id)}
+          >
+            Удалить
+          </MyButton>
+        </MyModal>
+      ))}
+      <MyModal size={MODAL_SIZE_TYPE.FULL_SCREEN} id={MODAL_CONTENT_TYPE.MARKER_FORM}>
         <CharacterMarkerForm/>
       </MyModal>
     </div>

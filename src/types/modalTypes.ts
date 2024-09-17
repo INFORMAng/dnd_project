@@ -1,7 +1,11 @@
+import { CSSProperties } from "react";
+
 export interface IModalScheme {
-  isOpen: boolean;
+  [key: string]: IModalState;
 }
 
-export enum MODAL_CONTENT_TYPE {
-  MARKER_FORM = 'characterMarkerForm',
+export interface IModalState {
+  isOpen: boolean;
+  position?: CSSProperties;  
 }
+
