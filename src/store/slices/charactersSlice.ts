@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
+import { LOCAL_STORAGE_KEYS, saveArrayToLocalStorage } from '../../helpers/lib/localStorage.js'
 import {ICharacter, ICharacterScheme} from '../../types/characterTypes.js'
 
 const initialState: ICharacterScheme = {
@@ -13,7 +13,7 @@ export const charactersSlice = createSlice({
     setCharactersData: (state, action: PayloadAction<ICharacter[]>) => {
       const charactersData = action.payload
       
-      saveArrayToLocalStorage('localCharsData', charactersData)
+      saveArrayToLocalStorage(LOCAL_STORAGE_KEYS.CHARS, charactersData)
       state.characters = charactersData;
     },
     setCharacterInfoData: (state, action: PayloadAction<ICharacter>) => {
@@ -25,7 +25,7 @@ export const charactersSlice = createSlice({
           characters[index] = characterData
         }
       })
-      saveArrayToLocalStorage('localCharsData', characters)
+      saveArrayToLocalStorage(LOCAL_STORAGE_KEYS.CHARS, characters)
     }
   },
 })

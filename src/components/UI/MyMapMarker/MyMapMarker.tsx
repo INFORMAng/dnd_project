@@ -16,25 +16,30 @@ interface IMyMapMarkerProps {
 const MyMapMarker = (props: IMyMapMarkerProps) => {
   const {id, name, color, size, index} = props
   const dispatch = useAppDispatch()
-  let markerRndSize = 0
+  const markerRndSize = getMarkerRndSize(size)
+  
+  function getMarkerRndSize(size: string) {
+    switch (size) {
+      case 'small': 
+        return 25
+      case 'medium':
+        return 50
+      case 'large':
+        return 75
+      case 'extra_large':
+        return 100
+    }
+  }
 
+  
   const OpenMapMarkerMenu = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     const {clientX: x, clientY: y} = event
     dispatch(closeAllModals())
     dispatch(openModal({id: `markerMenu_${id}`, position: { top: y, left: x }}))
   }
-    
-  switch (size) {
-    case 'small': 
-      markerRndSize = 25
-    case 'medium':
-      markerRndSize = 50
-    case 'large':
-      markerRndSize = 75
-    case 'extra_large':
-      markerRndSize = 100
-  }
+
+  if (!markerRndSize) return null
 
   return (
     <Rnd 

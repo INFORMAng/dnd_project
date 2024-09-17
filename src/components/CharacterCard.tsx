@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import {StateSchema} from "../store/config/stateSchema";
 import {getCharacterInfoCounts} from '../store/selectors/charactersSelectors'
 import { ICharacter } from '../types/characterTypes';
-import MyButton, { BUTTON_WIDTH_TYPE } from './UI/MyButton/MyButton';
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton';
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from './UI/MyButton/MyButton';
 
 interface CharacterCardProps {
   character: ICharacter;

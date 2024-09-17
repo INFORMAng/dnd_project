@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import MyInput from './UI/MyInput/MyInput'
 import MySelect from './UI/MySelect/MySelect'
-import MyButton, { BUTTON_WIDTH_TYPE } from './UI/MyButton/MyButton'
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE  } from './UI/MyButton/MyButton'
 import { IMarkerState, markerColorOptions, markerSizeOptions } from '../types/mapMarker'
 import { v4 as uuidv4 } from 'uuid'
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
 import { useAddMarker } from '../store/services/mapMarkersApi'
 import { addMapMarker } from '../store/slices/mapMarkersSlice'
+import toastr from '../helpers/constants/toasterConfig'
 
 const CharacterMarkerForm = () => {
   const dispatch = useAppDispatch()
   const [addMarker] = useAddMarker()
-  const emptyMarkerState = {id: "", name: "", color: "", size: ""}
+  const emptyMarkerState: IMarkerState = {id: "", name: "", color: "", size: ""}
   const [markerState, setMarkerState] = useState<IMarkerState>(emptyMarkerState)
+  
 
   const changeMarkerName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMarkerState(prevState => ({
@@ -40,7 +41,7 @@ const CharacterMarkerForm = () => {
     event.preventDefault()
 
     if (!markerState.name || !markerState.color || !markerState.size) {
-      alert("Заполните поля!")
+      toastr.warning('Заполните все поля', 'Внимание!')
       return
     }
 

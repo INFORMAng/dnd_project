@@ -1,4 +1,4 @@
-import { saveArrayToLocalStorage } from '../../helpers/lib/localStorage';
+import { LOCAL_STORAGE_KEYS, saveArrayToLocalStorage } from '../../helpers/lib/localStorage';
 import { IMarkerScheme, IMarkerState } from './../../types/mapMarker';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -13,20 +13,20 @@ const mapMarkerSlice = createSlice({
     setMapMarkersData: (state, action: PayloadAction<IMarkerState[]>) => {
       const mapMarkersData = action.payload
 
-      saveArrayToLocalStorage('localMarkersData', mapMarkersData)
+      saveArrayToLocalStorage(LOCAL_STORAGE_KEYS.MARKERS, mapMarkersData)
       state.mapMarkers = mapMarkersData
     },
     addMapMarker: (state, action: PayloadAction<IMarkerState>) => {
       const mapMarkersData = state.mapMarkers
 
       mapMarkersData.push(action.payload)
-      saveArrayToLocalStorage('localMarkersData', mapMarkersData)
+      saveArrayToLocalStorage(LOCAL_STORAGE_KEYS.MARKERS, mapMarkersData)
     },
     deleteMapMarker: (state, action: PayloadAction<string>) => {
       const newMapMarkersData = state.mapMarkers.filter(marker => marker.id !== action.payload)
 
       state.mapMarkers = newMapMarkersData
-      saveArrayToLocalStorage('localMarkersData', newMapMarkersData)
+      saveArrayToLocalStorage(LOCAL_STORAGE_KEYS.MARKERS, newMapMarkersData)
     }
   }
 })

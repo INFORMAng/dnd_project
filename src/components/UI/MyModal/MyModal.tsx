@@ -26,7 +26,7 @@ const MyModal: FC<IModalProps> = (props) => {
   const {children, size, id} = props
   const dispatch = useAppDispatch()
   const modalState = useSelector((state: StateSchema) => getModalState(state, id))
-
+  
   if (!modalState) return null 
   
   const {isOpen, position} = modalState

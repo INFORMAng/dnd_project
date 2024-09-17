@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
-import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
+import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
 import MapCharacter from '../components/MapCharacter'
 import { closeAllModals, closeModal, openModal } from '../store/slices/modalSlice'
-import MyButton, { BUTTON_WIDTH_TYPE } from '../components/UI/MyButton/MyButton'
-import { BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE } from '../components/UI/MyButton/MyButton'
+import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE  } from '../components/UI/MyButton/MyButton'
 import MyModal, { MODAL_CONTENT_TYPE, MODAL_SIZE_TYPE } from '../components/UI/MyModal/MyModal'
 import CharacterMarkerForm from '../components/CharacterMarkerForm'
 import { useDeleteMarker, useGetMarkers } from '../store/services/mapMarkersApi'
@@ -16,13 +15,13 @@ import MyMapMarker from '../components/UI/MyMapMarker/MyMapMarker'
 const GameMap = () => {
   const dispatch = useAppDispatch()
   const [deleteMarker] = useDeleteMarker()
-  const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
-  const isLocalMarkersData = getArrayFromLocalStorage('localMarkersData')
+  const isLocalCharsData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.CHARS)
+  const isLocalMarkersData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.MARKERS)
   const {data: characters} = useGetCharacters(null)
   const {data: markers} = useGetMarkers(null)
 
   const addNewPlayerMarker = () => {
-    dispatch(openModal({id: 'characterMarkerForm'}))
+    dispatch(openModal({id: MODAL_CONTENT_TYPE.MARKER_FORM}))
   }
 
   const handleCloseAllModals = (event: React.MouseEvent<HTMLDivElement>) => {

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import CharacterCard from '../components/CharacterCard'
 import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
-import { getArrayFromLocalStorage } from '../helpers/lib/localStorage'
+import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
 
 const Characters = () => {
   const dispatch = useAppDispatch()
-  const isLocalCharsData = getArrayFromLocalStorage('localCharsData')
+  const isLocalCharsData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.CHARS)
   const {data: characters} = useGetCharacters(null)
 
   useEffect(() => {
