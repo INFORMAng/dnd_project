@@ -11,9 +11,31 @@
     margin-bottom: 5px;
   }
 
+  &__buttons {
+    display: flex;
+    
+    &__switch {
+      display: flex;
+      width: 50%;
+    }
+  }
+
   &__main {
     margin: 5px 0;
     height: 80%;
     background: url(../img/map__castle1.png) center/contain no-repeat;
+    border: 5px solid rgb(54, 38, 33);
   }
+}
+
+.location__1 {
+  background: url(/img/locations/location__1.jpg) center/cover no-repeat;
+}
+
+.location__2 {
+  background: url(/img/locations/location__2__city.jpg) center/cover no-repeat;
+}
+
+.location__3 {
+  background: url(/img/locations/map__castle1.png) center/cover no-repeat;
 }

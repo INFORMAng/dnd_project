@@ -4,6 +4,7 @@ import cl from "./MyMapMarker.module.scss"
 import classNames from 'classnames';
 import { useAppDispatch } from '../../../helpers/hooks/useAppDispatch/useAppDispatch';
 import { closeAllModals, openModal } from '../../../store/slices/modalSlice';
+import { MARKER_SIZE_TYPE } from '../../../types/mapMarker';
 
 interface IMyMapMarkerProps {
   id: string;
@@ -20,18 +21,17 @@ const MyMapMarker = (props: IMyMapMarkerProps) => {
   
   function getMarkerRndSize(size: string) {
     switch (size) {
-      case 'small': 
+      case MARKER_SIZE_TYPE.S: 
         return 25
-      case 'medium':
+      case MARKER_SIZE_TYPE.M:
         return 50
-      case 'large':
+      case MARKER_SIZE_TYPE.L:
         return 75
-      case 'extra_large':
+      case MARKER_SIZE_TYPE.XL:
         return 100
     }
   }
 
-  
   const OpenMapMarkerMenu = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     const {clientX: x, clientY: y} = event

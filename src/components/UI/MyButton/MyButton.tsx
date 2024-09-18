@@ -17,6 +17,11 @@ export enum BUTTON_THEME_TYPE {
   DEFAULT = 'default',
 }
 
+export interface IButtonDisabledFlag {
+  back: boolean;
+  forward: boolean;
+}
+
 interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size: BUTTON_SIZE_TYPE;
