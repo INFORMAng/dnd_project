@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
 import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import { useGetCharacters } from '../store/services/characterApi'
+import { useDeleteMarker, useGetMarkers } from '../store/services/mapMarkersApi'
+import { useGetLocations } from '../store/services/locationsApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
-import MapCharacter from '../components/MapCharacter'
+import { deleteMapMarker, setMapMarkersData } from '../store/slices/mapMarkersSlice'
 import { closeAllModals, closeModal, openModal } from '../store/slices/modalSlice'
 import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE, IButtonDisabledFlag  } from '../components/UI/MyButton/MyButton'
 import MyModal, { MODAL_CONTENT_TYPE, MODAL_SIZE_TYPE } from '../components/UI/MyModal/MyModal'
-import CharacterMarkerForm from '../components/CharacterMarkerForm'
-import { useDeleteMarker, useGetMarkers } from '../store/services/mapMarkersApi'
-import { deleteMapMarker, setMapMarkersData } from '../store/slices/mapMarkersSlice'
 import MyMapMarker from '../components/UI/MyMapMarker/MyMapMarker'
+import MapCharacter from '../components/MapCharacter'
+import CharacterMarkerForm from '../components/CharacterMarkerForm'
 import classNames from 'classnames'
 
 const GameMap = () => {
@@ -20,11 +21,25 @@ const GameMap = () => {
   const isLocalMarkersData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.MARKERS)
   const {data: characters} = useGetCharacters(null)
   const {data: markers} = useGetMarkers(null)
-  const [locationNumber, setLocationNumber] = useState<number>(1)
-  const [buttonDisabledFlag, setButtonDisabledFlag] = useState<IButtonDisabledFlag>({back: true, forward: false})
+  const {data: locations} = useGetLocations(null)
+  const [locationNumber, setLocationNumber] = useState<number>(0)
+  const locationImage = locations && locations.length > 0
+    ? {
+      backgroundImage: `url(${locations[locationNumber].url})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }
+    : undefined
+  const isBackButtonDisabled = locationNumber === 0
+  const isForwardButtonDisabled = locations ? locationNumber === locations.length - 1 : true
 
-  const handleSwitchLocations = (delta: number) => {
-    setLocationNumber(locationNumber + delta)
+  const handleForwardSwitchLocation = () => {
+    setLocationNumber(locationNumber + 1)
+  }
+
+  const handleBackSwitchLocation = () => {
+    setLocationNumber(locationNumber - 1)
   }
 
   const addNewPlayerMarker = () => {
@@ -42,9 +57,6 @@ const GameMap = () => {
 
     dispatch(closeModal(MODAL_CONTENT_TYPE.MARKER_MENU))
   }
-  useEffect(() => {
-    setButtonDisabledFlag({back: locationNumber === 1, forward: locationNumber >= 3})
-  }, [locationNumber])
 
   useEffect(() => {
     if (!isLocalCharsData && characters) {
@@ -71,12 +83,12 @@ const GameMap = () => {
       </div>
       <div className="map__page__buttons">
         <div className='map__page__buttons__switch'>
-          <MyButton disabled={buttonDisabledFlag.back} size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => handleSwitchLocations(-1)} width={BUTTON_WIDTH_TYPE.FULL}>Назад</MyButton>
-          <MyButton disabled={buttonDisabledFlag.forward} size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => handleSwitchLocations(1)} width={BUTTON_WIDTH_TYPE.FULL}>Вперёд</MyButton>
+          <MyButton disabled={isBackButtonDisabled} size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => handleBackSwitchLocation()} width={BUTTON_WIDTH_TYPE.FULL}>Назад</MyButton>
+          <MyButton disabled={isForwardButtonDisabled} size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={() => handleForwardSwitchLocation()} width={BUTTON_WIDTH_TYPE.FULL}>Вперёд</MyButton>
         </div>
         <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={addNewPlayerMarker} width={BUTTON_WIDTH_TYPE.FULL}>Добавить Маркер</MyButton>
       </div>
-      <div className={classNames("map__page__main", `location__${locationNumber}`)} onClick={handleCloseAllModals}>
+      <div className={classNames("map__page__main")} style={locationImage} onClick={handleCloseAllModals}>
         {markers?.map((marker, index) => (
           <MyMapMarker 
             key={marker.id}

@@ -386,5 +386,19 @@
       "color": "green",
       "size": "large"
     }
+  ],
+  "locations": [
+    {
+      "name": "Храм",
+      "url": "https://img1.reactor.cc/pics/comment/full/Dungeons-%26-Dragons-%D0%BD%D1%80%D0%B8-%D0%BD%D0%B0%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BB-%D1%81%D0%B0%D0%BC-Pathfinder-4077867.jpeg"
+    },
+    {
+      "name": "Поле битвы",
+      "url": "https://i.pinimg.com/originals/de/f1/cb/def1cb37bf10c07bd8dd1149632ec8ea.jpg"
+    },
+    {
+      "name": "Дерево",
+      "url": "https://i.pinimg.com/originals/46/3e/df/463edf695f0505ee615ff543d2c373ce.png"
+    }
   ]
 }
