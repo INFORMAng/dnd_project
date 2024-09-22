@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react'
 import CharacterCard from '../components/CharacterCard'
+import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
+import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import { useGetCharacters } from '../store/services/characterApi'
 import { setCharactersData } from '../store/slices/charactersSlice'
-import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
-import {useAppDispatch} from "../helpers/hooks/useAppDispatch/useAppDispatch";
+import MyLoader, { MY_LOADER_TYPE } from '../components/UI/MyLoader/MyLoader'
+import React, { useEffect } from 'react'
 
 const Characters = () => {
   const dispatch = useAppDispatch()
   const isLocalCharsData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.CHARS)
-  const {data: characters} = useGetCharacters(null)
+  const {data: characters, isLoading: isCharactersLoading} = useGetCharacters(null)
 
   useEffect(() => {
     if (!isLocalCharsData && characters) {
@@ -20,9 +21,12 @@ const Characters = () => {
 
   return ( 
     <div className='main__characters'>
-      {characters?.map(character => (
-        <CharacterCard key={character.id} character={character}/>
-      ))} 
+      {isCharactersLoading 
+        ? <MyLoader type={MY_LOADER_TYPE.CHARACTERS}/>
+        : characters?.map(character => (
+            <CharacterCard key={character.id} character={character}/>
+          ))
+      } 
     </div>
   )
 }

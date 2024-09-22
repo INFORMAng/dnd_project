@@ -11,9 +11,24 @@
     margin-bottom: 5px;
   }
 
+  &__buttons {
+    display: flex;
+    
+    &__switch {
+      display: flex;
+      width: 50%;
+    }
+  }
+
   &__main {
     margin: 5px 0;
-    height: 80%;
+    height: 78%;
     background: url(../img/map__castle1.png) center/contain no-repeat;
+    border: 5px solid rgb(54, 38, 33);
   }
+}
+
+.div_center {
+  height: 100%;
+  @include flex-center
 }
