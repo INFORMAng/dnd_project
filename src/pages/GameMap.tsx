@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
 import { useAppDispatch } from '../helpers/hooks/useAppDispatch/useAppDispatch'
 import { getArrayFromLocalStorage, LOCAL_STORAGE_KEYS } from '../helpers/lib/localStorage'
 import { useGetCharacters } from '../store/services/characterApi'
@@ -11,28 +12,44 @@ import MyButton, { BUTTON_WIDTH_TYPE, BUTTON_THEME_TYPE, BUTTON_SIZE_TYPE, IButt
 import MyModal, { MODAL_CONTENT_TYPE, MODAL_SIZE_TYPE } from '../components/UI/MyModal/MyModal'
 import MyMapMarker from '../components/UI/MyMapMarker/MyMapMarker'
 import MapCharacter from '../components/MapCharacter'
+import MyLoader, { MY_LOADER_TYPE } from '../components/UI/MyLoader/MyLoader'
 import CharacterMarkerForm from '../components/CharacterMarkerForm'
-import classNames from 'classnames'
 
 const GameMap = () => {
   const dispatch = useAppDispatch()
   const [deleteMarker] = useDeleteMarker()
   const isLocalCharsData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.CHARS)
   const isLocalMarkersData = getArrayFromLocalStorage(LOCAL_STORAGE_KEYS.MARKERS)
-  const {data: characters} = useGetCharacters(null)
-  const {data: markers} = useGetMarkers(null)
-  const {data: locations} = useGetLocations(null)
+  const {data: characters, isLoading: isCharactersLoading} = useGetCharacters(null)
+  const {data: markers, isLoading: isMarkersLoading} = useGetMarkers(null)
+  const {data: locations = [], isLoading: isLocationLoading} = useGetLocations(null)
   const [locationNumber, setLocationNumber] = useState<number>(0)
-  const locationImage = locations && locations.length > 0
-    ? {
-      backgroundImage: `url(${locations[locationNumber].url})`,
+
+  useEffect(() => {
+    if (!isLocalCharsData && characters) {
+      dispatch(setCharactersData(characters))
+    } else {
+      dispatch(setCharactersData(isLocalCharsData))
+    }
+  }, [dispatch, characters])
+
+  useEffect(() => {
+    if (!isLocalMarkersData && markers) {
+      dispatch(setMapMarkersData(markers))
+    } else {
+      dispatch(setMapMarkersData(isLocalMarkersData))
+    }
+  }, [dispatch, markers])
+
+  const locationImage = {
+      backgroundImage: `url(${locations[locationNumber]?.url})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-    }
-    : undefined
+  }
+
   const isBackButtonDisabled = locationNumber === 0
-  const isForwardButtonDisabled = locations ? locationNumber === locations.length - 1 : true
+  const isForwardButtonDisabled = locationNumber === locations.length - 1
 
   const handleForwardSwitchLocation = () => {
     setLocationNumber(locationNumber + 1)
@@ -58,28 +75,16 @@ const GameMap = () => {
     dispatch(closeModal(MODAL_CONTENT_TYPE.MARKER_MENU))
   }
 
-  useEffect(() => {
-    if (!isLocalCharsData && characters) {
-      dispatch(setCharactersData(characters))
-    } else {
-      dispatch(setCharactersData(isLocalCharsData))
-    }
-  }, [dispatch, characters])
-
-  useEffect(() => {
-    if (!isLocalMarkersData && markers) {
-      dispatch(setMapMarkersData(markers))
-    } else {
-      dispatch(setMapMarkersData(isLocalMarkersData))
-    }
-  }, [dispatch, markers])
 
   return (
     <div className='map__page'>
       <div className="map__page__characters">
-        {characters?.map(character => (
-          <MapCharacter key={character.id} character={character}/>
-        ))}
+        {isCharactersLoading 
+          ? <MyLoader type={MY_LOADER_TYPE.CHARACTERS}/>
+          : characters?.map(character => (
+            <MapCharacter key={character.id} character={character}/>
+          ))
+        }
       </div>
       <div className="map__page__buttons">
         <div className='map__page__buttons__switch'>
@@ -89,15 +94,17 @@ const GameMap = () => {
         <MyButton size={BUTTON_SIZE_TYPE.M} theme={BUTTON_THEME_TYPE.DEFAULT} onClick={addNewPlayerMarker} width={BUTTON_WIDTH_TYPE.FULL}>Добавить Маркер</MyButton>
       </div>
       <div className={classNames("map__page__main")} style={locationImage} onClick={handleCloseAllModals}>
-        {markers?.map((marker, index) => (
-          <MyMapMarker 
-            key={marker.id}
-            id={marker.id} 
-            index={index+1}
-            name={marker.name} 
-            color={marker.color} 
-            size={marker.size}
-          />
+        { isLocationLoading 
+          ? <MyLoader type={MY_LOADER_TYPE.IMAGE}/>
+          : markers?.map((marker, index) => (
+              <MyMapMarker 
+                key={marker.id}
+                id={marker.id} 
+                index={index+1}
+                name={marker.name} 
+                color={marker.color} 
+                size={marker.size}
+              />
         ))}
       </div>
       {markers?.map(marker => (

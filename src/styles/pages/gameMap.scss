@@ -27,3 +27,8 @@
     border: 5px solid rgb(54, 38, 33);
   }
 }
+
+.div_center {
+  height: 100%;
+  @include flex-center
+}

@@ -15,6 +15,6 @@ const locationsApi = rtkApi.injectEndpoints({
             : [{type: 'locations', id: 'LIST' as const}],
     })
   })
-})
+}) 
 
 export const useGetLocations = locationsApi.useGetLocationsQuery;
